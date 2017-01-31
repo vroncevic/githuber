@@ -1,0 +1,41 @@
+${HASH}!/bin/bash
+${HASH}
+${HASH} "@brief" ${BRIEF}
+${HASH} "@version" ${VERSION}
+${HASH} "@date" ${DATE}
+${HASH} "@company" ${COMPANY}
+${HASH} "@author" ${AUTHOR}
+${HASH} 
+"ROOT_APP_DIR=/root/scripts"
+"APP_NAME_PREFIX=${PNAME_PREFIX}"
+"APP_NAME=${PNAME}"
+"APP_NAME_POSTFIX=${PNAME_POSTFIX}"
+"APP_VERSION=ver.1.0"
+"printf \\\"\\n%s\\n\\t%s\\n\\\" \\\"[Setup] Installing tool \\\${APP_NAME}\\\" \\\"\\\`date\\\`\\\""
+"if [ ! -d \"\\\${ROOT_APP_DIR}/\" ]; then"
+${TAB}"mkdir \\\"\\\${ROOT_APP_DIR}/\\\""
+"fi"
+"APP_HOME_DIR=\\\"\\\${ROOT_APP_DIR}/\\\${APP_NAME_PREFIX}\\\${APP_NAME}\\\${APP_NAME_POSTFIX}\\\""
+"if [ -d \\\"\\\${APP_HOME_DIR}/\\\" ]; then"
+${TAB}"printf \\\"%s\\n\\\" \\\"[Setup] Cleaning structure\\\""
+${TAB}"rm -rf \\\"\\\${APP_HOME_DIR}/\\\""
+"fi"
+"mkdir \\\"\\\${APP_HOME_DIR}/\\\""
+"mkdir \\\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/\\\""
+"printf \\\"%s\\n\\\" \\\"[Setup] Copy structure\\\""
+"cp -R \\\"./github/\\\${APP_NAME}/bin/\\\" \\\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/\\\""
+"if [ -f \\\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/bin/.editorconfig\\\" ]; then"
+${TAB}"rm \\\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/bin/.editorconfig\\\""
+"fi"
+"cp -R \\\"./github/\\\${APP_NAME}/conf/\\\" \\\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/\\\""
+"if [ -f \\\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/conf/.editorconfig\\\" ]; then"
+${TAB}"rm \\\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/conf/.editorconfig\\\""
+"fi"
+"cp -R \\\"./github/\\\${APP_NAME}/log/\\\" \\\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/\\\""
+"if [ -f \\\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/log/.editorconfig\\\" ]; then"
+${TAB}"rm \\\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/log/.editorconfig\\\""
+"fi"
+"printf \\\"%s\\n\\n\\\" \\\"[Setup] Done\\\""
+"tree -L 3 \\\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/\\\""
+"exit 0"
+
