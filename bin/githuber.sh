@@ -8,7 +8,7 @@
 #
 UTIL_ROOT=/root/scripts
 UTIL_VERSION=ver.1.0
-UTIL=${UTIL_ROOT}/sh_util/$UTIL_VERSION
+UTIL=${UTIL_ROOT}/sh_util/${UTIL_VERSION}
 UTIL_LOG=${UTIL}/log
 
 .	${UTIL}/bin/devel.sh

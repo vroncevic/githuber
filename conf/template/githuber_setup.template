@@ -1,11 +1,11 @@
 ${HASH}!/bin/bash
 ${HASH}
-${HASH} "@brief"   ${BRIEF}
-${HASH} "@version" ${VERSION}
-${HASH} "@date"    ${DATE}
-${HASH} "@company" ${COMPANY}
-${HASH} "@author"  ${AUTHOR}
-${HASH} 
+${HASH}" @brief"   ${BRIEF}
+${HASH}" @version" ${VERSION}
+${HASH}" @date"    ${DATE}
+${HASH}" @company" ${COMPANY}
+${HASH}" @author"  ${AUTHOR}
+${HASH}
 "ROOT_APP_DIR=/root/scripts"
 "APP_NAME_PREFIX=${PNAME_PREFIX}"
 "APP_NAME=${PNAME}"
