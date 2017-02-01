@@ -127,12 +127,12 @@ function __githuber() {
 					MSG="Creating directory [${PROJECT}/github/]"
 					__info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
 					mkdir "${PROJECT}/github/"
-					MSG="Setting owner!"
+					MSG="Set owner!"
 					__info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
 					local USRID=${config_githuber_util[UID]}
 					local GRPID=${config_githuber_util[GID]}
 					eval "chown -R ${USRID}.${GRPID} ${PROJECT}/"
-					MSG="Setting permissions"
+					MSG="Set permission!"
 					__info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
 					eval "chmod -R 700 ${PROJECT}/"
 					__info_debug_message_end "Done" "$FUNC" "$GITHUBER_TOOL"

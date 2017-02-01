@@ -1,10 +1,10 @@
 ${HASH}!/bin/bash
 ${HASH}
-${HASH} "@brief" ${BRIEF}
+${HASH} "@brief"   ${BRIEF}
 ${HASH} "@version" ${VERSION}
-${HASH} "@date" ${DATE}
+${HASH} "@date"    ${DATE}
 ${HASH} "@company" ${COMPANY}
-${HASH} "@author" ${AUTHOR}
+${HASH} "@author"  ${AUTHOR}
 ${HASH} 
 "ROOT_APP_DIR=/root/scripts"
 "APP_NAME_PREFIX=${PNAME_PREFIX}"
