@@ -48,6 +48,7 @@ declare -A PB_STRUCTURE=(
 )
 
 TOOL_DBG="false"
+TOOL_LOG="true"
 
 #
 # @brief   Main function 
