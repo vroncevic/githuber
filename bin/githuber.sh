@@ -14,9 +14,7 @@ UTIL_LOG=${UTIL}/log
 .	${UTIL}/bin/devel.sh
 .	${UTIL}/bin/usage.sh
 .	${UTIL}/bin/check_root.sh
-.	${UTIL}/bin/check_tool.sh
 .	${UTIL}/bin/logging.sh
-.	${UTIL}/bin/send_mail.sh
 .	${UTIL}/bin/load_conf.sh
 .	${UTIL}/bin/load_util_conf.sh
 .	${UTIL}/bin/progress_bar.sh
@@ -135,6 +133,9 @@ function __githuber() {
 					MSG="Set permission!"
 					__info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
 					eval "chmod -R 700 ${PROJECT}/"
+					MSG="Created project: ${PNAME} at area ${PAREA}"
+					GITHUBER_LOGGING[LOG_MSGE]=$MSG
+					__logging GITHUBER_LOGGING
 					__info_debug_message_end "Done" "$FUNC" "$GITHUBER_TOOL"
 					exit 0
 				fi
