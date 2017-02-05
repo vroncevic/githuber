@@ -50,7 +50,8 @@ declare -A PB_STRUCTURE=(
 )
 
 TOOL_DBG="false"
-TOOL_LOG="true"
+TOOL_LOG="false"
+TOOL_NOTIFY="false"
 
 #
 # @brief   Main function 
@@ -89,6 +90,9 @@ function __githuber() {
 			__info_debug_message_end "$MSG" "$FUNC" "$GITHUBER_TOOL"
 			exit 129
 		fi
+		TOOL_DBG=${config_githuber[DEBUGGING]}
+		TOOL_LOG=${config_githuber[LOGGING]}
+		TOOL_NOTIFY=${config_githuber[EMAILING]}
 		local DATE=`date` RDEVDIR=${config_githuber_util[PROJECT_DEV_ROOT]}
 		MSG="Checking directory [${RDEVDIR}/]?"
 		__info_debug_message_que "$MSG" "$FUNC" "$GITHUBER_TOOL"
