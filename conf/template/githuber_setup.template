@@ -7,9 +7,9 @@ ${HASH}" @company" ${COMPANY}
 ${HASH}" @author"  ${AUTHOR}
 ${HASH}
 "ROOT_APP_DIR=/root/scripts"
-"APP_NAME_PREFIX=${PNAME_PREFIX}"
+"APP_NAME_PREFIX=${PNPRFIX}"
 "APP_NAME=${PNAME}"
-"APP_NAME_POSTFIX=${PNAME_POSTFIX}"
+"APP_NAME_POSTFIX=${PNPOFIX}"
 "APP_VERSION=ver.1.0"
 "printf \\\"\\n%s\\n\\t%s\\n\\\" \\\"[Setup] Installing tool \\\${APP_NAME}\\\" \\\"\\\`date\\\`\\\""
 "if [ ! -d \"\\\${ROOT_APP_DIR}/\" ]; then"

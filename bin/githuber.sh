@@ -28,8 +28,10 @@ GITHUBER_LOG=${GITHUBER_HOME}/log
 
 declare -A GITHUBER_USAGE=(
 	[USAGE_TOOL]="${GITHUBER_TOOL}"
-	[USAGE_ARG1]="[PAREA] Dev area: bash | perl | python | cc++"
-	[USAGE_ARG2]="[PNAME] Fullname of project"
+	[USAGE_ARG1]="[PRPJECT AREA] Dev area: bash | perl | python | cc++"
+	[USAGE_ARG2]="[PROJECT NAME] Fullname of project"
+	[USAGE_ARG3]="[PROJECT NAME PREFIX] Prefix name of project (optional)"
+	[USAGE_ARG4]="[PROJECT NAME POSTFIX] Postfix name of project (optional)"
 	[USAGE_EX_PRE]="# Creating project structure"
 	[USAGE_EX]="${GITHUBER_TOOL} perl GtkWindow"
 )
@@ -65,7 +67,7 @@ TOOL_LOG="true"
 # __githuber perl GtkWindow
 #
 function __githuber() {
-	local PAREA=$1 PNAME=$2
+	local PAREA=$1 PNAME=$2 PNPRFIX=$3 PNPOFIX=$4
 	if [[ -n "${PAREA}" && -n "${PNAME}" ]]; then
 		local FUNC=${FUNCNAME[0]} MSG="None" STATUS_CONF STATUS_CONF_UTIL STATUS
 		MSG="Loading basic and util configuration!"
@@ -176,7 +178,7 @@ printf "\n%s\n%s\n\n" "${GITHUBER_TOOL} ${GITHUBER_VERSION}" "`date`"
 __check_root
 STATUS=$?
 if [ $STATUS -eq $SUCCESS ]; then
-	__githuber $1 $2
+	__githuber $1 $2 $3 $4
 fi
 
 exit 127
