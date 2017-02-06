@@ -54,7 +54,7 @@ TOOL_LOG="false"
 TOOL_NOTIFY="false"
 
 #
-# @brief   Main function 
+# @brief   Main function
 # @params  Values required project area and project name
 # @exitval Function __githuber exit with integer value
 #			0   - tool finished with success operation 
@@ -107,11 +107,9 @@ function __githuber() {
 				__info_debug_message_ans "$MSG" "$FUNC" "$GITHUBER_TOOL"
 				local PROJECT="${ADIR}/${PNAME}"
 				if [ ! -d "${PROJECT}/" ]; then
-					MSG="Creating directory [${PROJECT}/]!"
+					MSG="Generating directory [${PROJECT}/]!"
 					__info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
 					mkdir "${PROJECT}/"
-					MSG="Creating setup script!"
-					__info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
 					local SLINE GLINE BRIEF VERSION COMPANY AUTHOR TAB="	"
 					local GUIDE=${config_githuber_util[GUIDELINE_TEMPLATE]}
 					local SETUP=${config_githuber_util[SETUP_TEMPLATE]} HASH="#"
@@ -119,17 +117,19 @@ function __githuber() {
 					VERSION=${config_githuber_util[VERSION]}
 					COMPANY=${config_githuber_util[COMPANY]}
 					AUTHOR=${config_githuber_util[AUTHOR]}
+					MSG="Generating file [${PROJECT}/${PNAME}_setup.sh]"
+					__info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
 					while read SLINE
 					do
 						eval echo "$SLINE" >> "${PROJECT}/${PNAME}_setup.sh"
 					done < "${GITHUBER_HOME}/conf/${SETUP}"
-					MSG="Creating GIT help file!"
+					MSG="Generating file [${NAME}.sh]"
 					__info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
 					while read GLINE
 					do
 						eval echo "$GLINE" >> "${PROJECT}/${PNAME}_git.txt"
 					done < "${GITHUBER_HOME}/conf/${GUIDE}"
-					MSG="Creating directory [${PROJECT}/github/]"
+					MSG="Generating directory [${PROJECT}/github/]"
 					__info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
 					mkdir "${PROJECT}/github/"
 					MSG="Set owner!"
@@ -140,7 +140,7 @@ function __githuber() {
 					MSG="Set permission!"
 					__info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
 					eval "chmod -R 700 ${PROJECT}/"
-					MSG="Created project: ${PNAME} at area ${PAREA}"
+					MSG="Generated project: ${PNAME} at area ${PAREA}"
 					GITHUBER_LOGGING[LOG_MSGE]=$MSG
 					__logging GITHUBER_LOGGING
 					__info_debug_message_end "Done" "$FUNC" "$GITHUBER_TOOL"
