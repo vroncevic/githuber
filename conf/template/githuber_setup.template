@@ -1,4 +1,4 @@
-${HASH}!/bin/bash
+${HASH}"!/bin/bash"
 ${HASH}
 ${HASH}" @brief"   ${BRIEF}
 ${HASH}" @version" ${VERSION}

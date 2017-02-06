@@ -1,4 +1,4 @@
-Generate setup script for projects (Bash script).
+Generate setup script and github guideline file (Bash script).
 ================================================================================
 
 The README is used to introduce the modules and provide instructions on
