@@ -129,21 +129,26 @@ function __githuber() {
 					VERSION=${config_githuber_util[VERSION]}
 					COMPANY=${config_githuber_util[COMPANY]}
 					AUTHOR=${config_githuber_util[AUTHOR]}
-					MSG="Generating file [${PROJECT}/${PNAME}_setup.sh]"
+					local SF="${PROJECT}/${PNAME}_setup.sh"
+					local STF="${GITHUBER_HOME}/conf/${SETUP}"
+					MSG="Generating file [${SF}]"
 					__info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
 					while read SLINE
 					do
-						eval echo "$SLINE" >> "${PROJECT}/${PNAME}_setup.sh"
-					done < "${GITHUBER_HOME}/conf/${SETUP}"
-					MSG="Generating file [${PROJECT}/${PNAME}_git.txt]"
+						eval echo "$SLINE" >> ${SF}
+					done < ${STF}
+					local GF="${PROJECT}/${PNAME}_git.txt"
+					local GFT="${GITHUBER_HOME}/conf/${GUIDE}"
+					MSG="Generating file [${GF}]"
 					__info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
 					while read GLINE
 					do
-						eval echo "$GLINE" >> "${PROJECT}/${PNAME}_git.txt"
-					done < "${GITHUBER_HOME}/conf/${GUIDE}"
-					MSG="Generating directory [${PROJECT}/github/]"
+						eval echo "$GLINE" >> ${GF}
+					done < ${GFT}
+					local GHUB="${PROJECT}/github"
+					MSG="Generating directory [${GHUB}/]"
 					__info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
-					mkdir "${PROJECT}/github/"
+					mkdir "${GHUB}/"
 					MSG="Set owner!"
 					__info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
 					local USRID=${config_githuber_util[UID]} TREE
@@ -166,7 +171,7 @@ function __githuber() {
 				fi
 				MSG="[not ok]"
 				__info_debug_message_ans "$MSG" "$FUNC" "$GITHUBER_TOOL"
-				MSG="Project already exist [${PROJECT}/]!"
+				MSG="Project already exist [${PROJECT}/]"
 				__info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
 				MSG="Force exit!"
 				__info_debug_message_end "$MSG" "$FUNC" "$GITHUBER_TOOL"
@@ -194,7 +199,7 @@ function __githuber() {
 # @exitval Script tool githuber exit with integer value
 #			0   - tool finished with success operation 
 # 			127 - run tool script as root user from cli
-#			128 - missing argument(s) from cli 
+#			128 - missing argument(s) from cli
 #			129 - failed to load tool script configuration from files
 #			130 - missing area in configuration file
 #			131 - missing devel root directory
