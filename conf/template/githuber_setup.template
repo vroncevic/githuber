@@ -1,24 +1,24 @@
-${HASH}"!/bin/bash"
-${HASH}
-${HASH}" @brief"   ${BRIEF}
-${HASH}" @version" ${VERSION}
-${HASH}" @date"    ${DATE}
-${HASH}" @company" ${COMPANY}
-${HASH}" @author"  ${AUTHOR}
-${HASH}
+${H}"!/bin/bash"
+${H}
+${H}" @brief   ${BRIEF}"
+${H}" @version ${V}"
+${H}" @date    ${DATE}"
+${H}" @company ${COMPANY}"
+${H}" @author  ${AN} <${AE}>"
+${H}
 "ROOT_APP_DIR=/root/scripts"
-"APP_NAME_PREFIX=${PNPRFIX}"
-"APP_NAME=${PNAME}"
-"APP_NAME_POSTFIX=${PNPOFIX}"
+"APP_NAME_PREFIX=${PNPRX}"
+"APP_NAME=${PN}"
+"APP_NAME_POSTFIX=${PNPOX}"
 "APP_VERSION=ver.1.0"
 "printf \\\"\\n%s\\n\\t%s\\n\\\" \\\"[Setup] Installing tool \\\${APP_NAME}\\\" \\\"\\\`date\\\`\\\""
 "if [ ! -d \"\\\${ROOT_APP_DIR}/\" ]; then"
-${TAB}"mkdir \\\"\\\${ROOT_APP_DIR}/\\\""
+${T}"mkdir \\\"\\\${ROOT_APP_DIR}/\\\""
 "fi"
 "APP_HOME_DIR=\\\"\\\${ROOT_APP_DIR}/\\\${APP_NAME_PREFIX}\\\${APP_NAME}\\\${APP_NAME_POSTFIX}\\\""
 "if [ -d \\\"\\\${APP_HOME_DIR}/\\\" ]; then"
-${TAB}"printf \\\"%s\\n\\\" \\\"[Setup] Clean structure\\\""
-${TAB}"rm -rf \\\"\\\${APP_HOME_DIR}/\\\""
+${T}"printf \\\"%s\\n\\\" \\\"[Setup] Clean structure\\\""
+${T}"rm -rf \\\"\\\${APP_HOME_DIR}/\\\""
 "fi"
 "mkdir \\\"\\\${APP_HOME_DIR}/\\\""
 "mkdir \\\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/\\\""

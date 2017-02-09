@@ -72,8 +72,8 @@ TOOL_NOTIFY="false"
 # __githuber perl GtkWindow
 #
 function __githuber() {
-	local PAREA=$1 PNAME=$2 PNPRFIX=$3 PNPOFIX=$4
-	if [[ -n "${PAREA}" && -n "${PNAME}" ]]; then
+	local PA=$1 PN=$2 PNPRX=$3 PNPOX=$4
+	if [[ -n "${PA}" && -n "${PN}" ]]; then
 		local FUNC=${FUNCNAME[0]} MSG="None" STATUS_CONF STATUS_CONF_UTIL STATUS
 		MSG="Loading basic and util configuration!"
 		__info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
@@ -98,7 +98,7 @@ function __githuber() {
 		TOOL_LOG=${config_githuber[LOGGING]}
 		TOOL_NOTIFY=${config_githuber[EMAILING]}
 		local AREAS=${config_githuber_util[AREAS]}
-		__check_key ${PAREA} ${AREAS}
+		__check_key ${PA} ${AREAS}
 		STATUS=$?
 		if [ $STATUS -eq $NOT_SUCCESS ]; then
 			MSG="Force exit!"
@@ -111,33 +111,34 @@ function __githuber() {
 		if [ -d "${RDEVDIR}/" ]; then
 			MSG="[ok]"
 			__info_debug_message_ans "$MSG" "$FUNC" "$GITHUBER_TOOL"
-			local ADIR="${RDEVDIR}/${PAREA}"
+			local ADIR="${RDEVDIR}/${PA}"
 			MSG="Checking directory [${ADIR}/]?"
 			__info_debug_message_que "$MSG" "$FUNC" "$GITHUBER_TOOL"
 			if [ -d "${ADIR}/" ]; then
 				MSG="[ok]"
 				__info_debug_message_ans "$MSG" "$FUNC" "$GITHUBER_TOOL"
-				local PROJECT="${ADIR}/${PNAME}"
+				local PROJECT="${ADIR}/${PN}"
 				if [ ! -d "${PROJECT}/" ]; then
 					MSG="Generating directory [${PROJECT}/]"
 					__info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
 					mkdir "${PROJECT}/"
-					local SLINE GLINE BRIEF VERSION COMPANY AUTHOR TAB="	"
+					local T="	" SLINE GLINE BRIEF V COMPANY H="#" AN AE SF STF
 					local GUIDE=${config_githuber_util[GUIDELINE_TEMPLATE]}
-					local SETUP=${config_githuber_util[SETUP_TEMPLATE]} HASH="#"
+					local SETUP=${config_githuber_util[SETUP_TEMPLATE]} TREE
 					BRIEF=${config_githuber_util[BRIEF]}
-					VERSION=${config_githuber_util[VERSION]}
+					V=${config_githuber_util[VERSION]}
 					COMPANY=${config_githuber_util[COMPANY]}
-					AUTHOR=${config_githuber_util[AUTHOR]}
-					local SF="${PROJECT}/${PNAME}_setup.sh"
-					local STF="${GITHUBER_HOME}/conf/${SETUP}"
+					AN=${config_githuber_util[AUTHOR_NAME]}
+					AE=${config_githuber_util[AUTHOR_EMAIL]}
+					SF="${PROJECT}/${PN}_setup.sh"
+					STF="${GITHUBER_HOME}/conf/${SETUP}"
 					MSG="Generating file [${SF}]"
 					__info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
 					while read SLINE
 					do
 						eval echo "$SLINE" >> ${SF}
 					done < ${STF}
-					local GF="${PROJECT}/${PNAME}_git.txt"
+					local GF="${PROJECT}/${PN}_git.txt"
 					local GFT="${GITHUBER_HOME}/conf/${GUIDE}"
 					MSG="Generating file [${GF}]"
 					__info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
@@ -151,13 +152,13 @@ function __githuber() {
 					mkdir "${GHUB}/"
 					MSG="Set owner!"
 					__info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
-					local USRID=${config_githuber_util[UID]} TREE
+					local USRID=${config_githuber_util[UID]}
 					local GRPID=${config_githuber_util[GID]}
 					eval "chown -R ${USRID}.${GRPID} ${PROJECT}/"
 					MSG="Set permission!"
 					__info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
 					eval "chmod -R 700 ${PROJECT}/"
-					MSG="Generated project: ${PNAME} at area ${PAREA}"
+					MSG="Generated project: ${PN} at area ${PA}"
 					GITHUBER_LOGGING[LOG_MSGE]=$MSG
 					__logging GITHUBER_LOGGING
 					__info_debug_message_end "Done" "$FUNC" "$GITHUBER_TOOL"
@@ -197,7 +198,7 @@ function __githuber() {
 # @brief   Main entry point of script tool
 # @params  Values required project area and project name
 # @exitval Script tool githuber exit with integer value
-#			0   - tool finished with success operation 
+#			0   - tool finished with success operation
 # 			127 - run tool script as root user from cli
 #			128 - missing argument(s) from cli
 #			129 - failed to load tool script configuration from files

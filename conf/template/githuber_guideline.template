@@ -1,43 +1,43 @@
-${HASH}
-${HASH}" Create a new repository on GitHub."
-${HASH}
-${HASH}" To avoid errors, do not initialize the new repository with README,"
-${HASH}" license, or gitignore files. You can add these files after your"
-${HASH}" project has been pushed to GitHub. Open Terminal (for Mac and Linux"
-${HASH}" users) or the command prompt - CMD (for Windows users). Change the"
-${HASH}" current working directory to your local project. Initialize the local"
-${HASH}" directory as a Git repository."
-${HASH}
+${H}
+${H}" Create a new repository on GitHub."
+${H}
+${H}" To avoid errors, do not initialize the new repository with README,"
+${H}" license, or gitignore files. You can add these files after your"
+${H}" project has been pushed to GitHub. Open Terminal (for Mac and Linux"
+${H}" users) or the command prompt - CMD (for Windows users). Change the"
+${H}" current working directory to your local project. Initialize the local"
+${H}" directory as a Git repository."
+${H}
 
 "git init"
 
-${HASH}
-${HASH}" Add the files in your new local repository. This stages them for the"
-${HASH}" first commit."
-${HASH}
+${H}
+${H}" Add the files in your new local repository. This stages them for the"
+${H}" first commit."
+${H}
 
 "git add ."
 
-${HASH}
-${HASH}" Adds the files in the local repository and stages them for commit."
-${HASH}" To unstage a file, use: 'git reset HEAD YOUR-FILE'. Commit the files"
-${HASH}" that you've staged in your local repository."
-${HASH}
+${H}
+${H}" Adds the files in the local repository and stages them for commit."
+${H}" To unstage a file, use: 'git reset HEAD YOUR-FILE'. Commit the files"
+${H}" that you've staged in your local repository."
+${H}
 
-"git commit -m \"First commit\""
+"git commit -m \\\"First commit\\\""
 
-${HASH}
-${HASH}" Commits the tracked changes and prepares them to be pushed to a remote"
-${HASH}" repository. To remove this commit and modify the file, use:"
-${HASH}" 'git reset --soft HEAD~1' and commit and add the file again."
-${HASH}" Copy remote repository URL fieldAt the top of your GitHub repository's"
-${HASH}" Quick Setup page, click to copy the remote repository URL."
-${HASH}" In Terminal, add the URL for the remote repository where your local"
-${HASH}" repository will be pushed. Git remote add origin remote repository URL"
-${HASH}
-${HASH}" Sets the new remote"
-${HASH}
+${H}
+${H}" Commits the tracked changes and prepares them to be pushed to a remote"
+${H}" repository. To remove this commit and modify the file, use:"
+${H}" 'git reset --soft HEAD~1' and commit and add the file again."
+${H}" Copy remote repository URL fieldAt the top of your GitHub repository's"
+${H}" Quick Setup page, click to copy the remote repository URL."
+${H}" In Terminal, add the URL for the remote repository where your local"
+${H}" repository will be pushed. Git remote add origin remote repository URL"
+${H}
+${H}" Sets the new remote"
+${H}
 
 "git remote -v"
 
-${HASH}
+${H}
