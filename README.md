@@ -18,7 +18,7 @@ cp -R ~/githuber/log/   /root/scripts/githuber/ver.1.0/
 
 This module requires these other modules and libraries:
 
-	* sh_util https://github.com/vroncevic/sh_util
+* sh_util https://github.com/vroncevic/sh_util
 
 ### COPYRIGHT AND LICENCE
 
