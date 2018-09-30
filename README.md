@@ -1,4 +1,4 @@
-# Generate setup script and github guideline file (Bash script).
+# Generate setup script and github guideline file.
 
 The README is used to introduce the modules and provide instructions on
 how to install the modules, any machine dependencies it may have and any
@@ -18,7 +18,7 @@ cp -R ~/githuber/log/   /root/scripts/githuber/ver.1.0/
 
 This module requires these other modules and libraries:
 
-	* sh_util https://github.com/vroncevic/sh_util
+* sh_util https://github.com/vroncevic/sh_util
 
 ### COPYRIGHT AND LICENCE
 
