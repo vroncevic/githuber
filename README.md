@@ -1,8 +1,8 @@
 # Generate setup script and github guideline file.
 
-githuber is shell tool for generating github structure.
+***githuber*** is shell tool for generating github structure.
 
-Developed in bash code: 100%.
+Developed in bash code: ***100%***.
 
 The README is used to introduce the modules and provide instructions on
 how to install the modules, any machine dependencies it may have and any
@@ -10,6 +10,17 @@ other information that should be provided before the modules are installed.
 
 [![GitHub issues open](https://img.shields.io/github/issues/vroncevic/githuber.svg)](https://github.com/vroncevic/githuber/issues)
  [![GitHub contributors](https://img.shields.io/github/contributors/vroncevic/githuber.svg)](https://github.com/vroncevic/githuber/graphs/contributors)
+
+<!-- START doctoc -->
+**Table of Contents**
+
+- [Installation](https://github.com/vroncevic/githuber#installation)
+- [Usage](https://github.com/vroncevic/githuber#usage)
+- [Dependencies](https://github.com/vroncevic/githuber#dependencies)
+- [Shell tool structure](https://github.com/vroncevic/githuber#shell-tool-structure)
+- [Docs](https://github.com/vroncevic/githuber#docs)
+- [Copyright and Licence](https://github.com/vroncevic/githuber#copyright-and-licence)
+<!-- END doctoc -->
 
 ### INSTALLATION
 
@@ -25,9 +36,9 @@ cp -R ~/sh_tool/conf/  /root/scripts/githuber/ver.1.0/
 cp -R ~/sh_tool/log/   /root/scripts/githuber/ver.1.0/
 ```
 
-Or You can use docker to create image/container.
+![alt tag](https://raw.githubusercontent.com/vroncevic/githuber/dev/docs/setup_tree.png)
 
-:sparkles:
+Or You can use docker to create image/container.
 
 ### USAGE
 
@@ -50,7 +61,7 @@ This module requires these other modules and libraries:
 
 ### SHELL TOOL STRUCTURE
 
-githuber is based on MOP.
+***githuber*** is based on MOP.
 
 Shell tool structure:
 ```
@@ -60,7 +71,7 @@ Shell tool structure:
 ├── conf/
 │   ├── githuber.cfg
 │   ├── githuber_util.cfg
-│   └── template
+│   └── template/
 │       ├── githuber_guideline.template
 │       └── githuber_setup.template
 └── log/
@@ -75,8 +86,6 @@ More documentation and info at:
 
 * https://githuber.readthedocs.io/en/latest/
 
-:sparkles:
-
 ### COPYRIGHT AND LICENCE
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
@@ -86,6 +95,4 @@ Copyright (C) 2018 by https://vroncevic.github.io/githuber
 This tool is free software; you can redistribute it and/or modify
 it under the same terms as Bash itself, either Bash version 4.2.47 or,
 at your option, any later version of Bash 4 you may have available.
-
-:sparkles:
 
