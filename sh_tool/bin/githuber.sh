@@ -27,14 +27,14 @@ GITHUBER_CFG=${GITHUBER_HOME}/conf/${GITHUBER_TOOL}.cfg
 GITHUBER_UTIL_CFG=${GITHUBER_HOME}/conf/${GITHUBER_TOOL}_util.cfg
 GITHUBER_LOG=${GITHUBER_HOME}/log
 
-declare -A GITHUBER_USAGE=(
-    [USAGE_TOOL]="${GITHUBER_TOOL}"
-    [USAGE_ARG1]="[PRPJECT AREA] Devel area: bash, cc++, perl, python, ruby"
-    [USAGE_ARG2]="[PROJECT NAME] Fullname of project"
-    [USAGE_ARG3]="[PROJECT NAME PREFIX] Prefix name of project (optional)"
-    [USAGE_ARG4]="[PROJECT NAME POSTFIX] Postfix name of project (optional)"
-    [USAGE_EX_PRE]="# Creating project structure"
-    [USAGE_EX]="${GITHUBER_TOOL} perl GtkWindow"
+declare -A GITHUBER_Usage=(
+    [Usage_TOOL]="${GITHUBER_TOOL}"
+    [Usage_ARG1]="[PRPJECT AREA] Devel area: bash, cc++, perl, python, ruby"
+    [Usage_ARG2]="[PROJECT NAME] Fullname of project"
+    [Usage_ARG3]="[PROJECT NAME PREFIX] Prefix name of project (optional)"
+    [Usage_ARG4]="[PROJECT NAME POSTFIX] Postfix name of project (optional)"
+    [Usage_EX_PRE]="# Creating project structure"
+    [Usage_EX]="${GITHUBER_TOOL} perl GtkWindow"
 )
 
 declare -A GITHUBER_LOGGING=(
@@ -192,7 +192,7 @@ function __githuber {
         info_debug_message_end "$MSG" "$FUNC" "$GITHUBER_TOOL"
         exit 131
     fi
-    usage GITHUBER_USAGE
+    usage GITHUBER_Usage
     exit 128
 }
 
