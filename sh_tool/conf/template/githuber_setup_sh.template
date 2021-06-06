@@ -1,17 +1,18 @@
 ${H}"!/bin/bash"
 ${H}
 ${H}" @brief   ${BRIEF}"
-${H}" @version ${V}"
+${H}" @version ${VERSION}"
 ${H}" @date    ${DATE}"
 ${H}" @company ${COMPANY}"
-${H}" @author  ${AN} <${AE}>"
+${H}" @author  ${AUTHOR_NAME} <${AUTHOR_EMAIL}>"
 ${H}
+
 "ROOT_APP_BIN=/root/bin"
 "ROOT_APP_DIR=/root/scripts"
 
-"APP_NAME_PREFIX=${PNPRX}"
-"APP_NAME=${PN}"
-"APP_NAME_POSTFIX=${PNPOX}"
+"APP_NAME_PREFIX=${PRO_NAME_PREFIX}"
+"APP_NAME=${PRO_NAME}"
+"APP_NAME_POSTFIX=${PRO_NAME_POSTFIX}"
 "APP_VERSION=ver.1.0"
 "APP_BIN_DIR=\\\`pwd\\\`/github/\\\${APP_NAME}/bin/"
 "APP_CFG_DIR=\\\`pwd\\\`/github/\\\${APP_NAME}/conf/"
@@ -19,71 +20,68 @@ ${H}
 
 "printf \\\"\\n%s\\n\\t%s\\n\\\" \\\"[Setup] Installing App/Tool/Script \\\${APP_NAME}\\\" \\\"\\\`date\\\`\\\""
 
-"# Setting dir structure for App/Tool/Script"
+"${H} Setting dir structure for App/Tool/Script"
 "if [ ! -d \\\"\\\${ROOT_APP_DIR}/\\\" ]; then"
 ${T}"mkdir \\\"\\\${ROOT_APP_DIR}/\\\""
 "fi"
 
 "APP_HOME_DIR=\\\"\\\${ROOT_APP_DIR}/\\\${APP_NAME_PREFIX}\\\${APP_NAME}\\\${APP_NAME_POSTFIX}\\\""
-"APP_SCRIPT=\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/bin/\\\${APP_NAME}.sh\""
+"APP_SCRIPT=\\\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/bin/\\\${APP_NAME}.sh\\\""
 
-"# Setting App/Tool/Script home directory"
+"${H} Setting App/Tool/Script home directory"
 "if [ -d \\\"\\\${APP_HOME_DIR}/\\\" ]; then"
 ${T}"printf \\\"%s\\n\\\" \\\"[Setup] Clean up App/Tool/Script structure\\\""
 ${T}"rm -rf \\\"\\\${APP_HOME_DIR}/\\\""
-${T}"rm -f \\\${ROOT_APP_BIN}/\\\${APP_NAME}"
+${T}"rm -f \\\"\\\${ROOT_APP_BIN}/\\\${APP_NAME}\\\""
 "fi"
+
 "mkdir \\\"\\\${APP_HOME_DIR}/\\\""
 "mkdir \\\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/\\\""
 "printf \\\"%s\\n\\\" \\\"[Setup] Copy structure\\\""
 
-"# Setting App/Tool/Script bin directory"
+"${H} Setting App/Tool/Script bin directory"
 "if [ -d \\\"\\\${APP_BIN_DIR}/\\\" ]; then"
 ${T}"cp -R \\\"\\\${APP_BIN_DIR}\\\" \\\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/\\\""
 "else"
-${T}"printf \\\"%s\n\\\" \\\"[setup] Check path \\\${APP_BIN_DIR}\\\""
+${T}"printf \\\"%s\\n\\\" \\\"[setup] Check path \\\${APP_BIN_DIR}\\\""
 ${T}"exit 127"
 "fi"
 
-"# Setting App/Tool/Scipt configuration directory"
+"${H} Setting App/Tool/Scipt configuration directory"
 "if [ -d \\\"\\\${APP_CFG_DIR}/\\\" ]; then"
 ${T}"cp -R \\\"\\\${APP_CFG_DIR}\\\" \\\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/\\\""
 "else"
-${T}"printf \\\"%s\n\\\" \\\"[setup] Check path \\\${APP_CFG_DIR}\\\""
+${T}"printf \\\"%s\\n\\\" \\\"[setup] Check path \\\${APP_CFG_DIR}\\\""
 ${T}"exit 127"
 "fi"
 
-"# Setting App/Tool/Script logging directory"
+"${H} Setting App/Tool/Script logging directory"
 "if [[ -d \\\"\\\${APP_LOG_DIR}\\\" ]]; then"
 ${T}"cp -R \\\"\\\${APP_LOG_DIR}\\\" \\\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/\\\""
 "else"
-${T}"printf \\\"%s\n\\\" \\\"[setup] Check path \\\${APP_LOG_DIR}\\\""
+${T}"printf \\\"%s\\n\\\" \\\"[setup] Check path \\\${APP_LOG_DIR}\\\""
 ${T}"exit 127"
 "fi"
 
-"# Clean up git env files"
+"${H} Clean up git env files"
 "printf \\\"%s\\n\\\" \\\"[Setup] Remove github editor configuration files\\\""
-
 "find \\\"\\\${ROOT_APP_DIR}/\\\" -name \\\"*.editorconfig\\\" -type f -exec rm -Rf {} \\;"
 
-"# Setting permissions"
-
+"${H} Setting permissions"
 "printf \\\"%s\\n\\\" \\\"[Setup] Set App/Tool/Script permission\\\""
-
 "chmod -R 700 \\\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/\\\""
 
-"# Setting symbolic link for App/Tool/Script"
-"printf \\\"%s\n\\\" \\\"[setup] Create symbolic link of App/Tool/Script\\\""
-
-"ln -s \\\${APP_SCRIPT} \\\${ROOT_APP_BIN}/\\\${APP_NAME}"
+"${H} Setting symbolic link for App/Tool/Script"
+"printf \\\"%s\\n\\\" \\\"[setup] Create symbolic link of App/Tool/Script\\\""
+"ln -s \\\"\\\${APP_SCRIPT} \\\${ROOT_APP_BIN}/\\\${APP_NAME}\\\""
 
 "printf \\\"%s\\n\\n\\\" \\\"[Setup] Done\\\""
 
-"# Print tree of App/Tool/Script structure"
+"${H} Print tree of App/Tool/Script structure"
 "tree -L 3 \\\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/\\\""
 
-"# Print symbolic link of App/Tool/Script"
-"ls -all \\\${ROOT_APP_BIN}/\\\${APP_NAME}"
+"${H} Print symbolic link of App/Tool/Script"
+"ls -all \\\"\\\${ROOT_APP_BIN}/\\\${APP_NAME}/\\\""
 
 "exit 0"
 

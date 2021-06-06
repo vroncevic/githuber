@@ -1,0 +1,14 @@
+${H}"!/bin/bash"
+${H}
+${H}" @brief   ${BRIEF}"
+${H}" @version ${VERSION}"
+${H}" @date    ${DATE}"
+${H}" @company ${COMPANY}"
+${H}" @author  ${AUTHOR_NAME} <${AUTHOR_EMAIL}>"
+${H}
+
+"CONTAINER_NAME=${PRO_NAME}"
+"REPO=${PRO_NAME}"
+"TAG=latest"
+
+"docker run -it --name \\\${CONTAINER_NAME} \\\${REPO}:\\\${TAG} /bin/bash"
