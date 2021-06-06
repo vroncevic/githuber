@@ -41,11 +41,11 @@ To install **githuber** type the following:
 
 .. code-block:: bash
 
-   tar xvzf githuber-x.y.z.tar.gz
-   cd githuber-x.y.z
-   cp -R ~/sh_tool/bin/   /root/scripts/githuber/ver.1.0/
-   cp -R ~/sh_tool/conf/  /root/scripts/githuber/ver.1.0/
-   cp -R ~/sh_tool/log/   /root/scripts/githuber/ver.1.0/
+   tar xvzf githuber-x.y.tar.gz
+   cd githuber-x.y
+   cp -R ~/sh_tool/bin/   /root/scripts/githuber/ver.x.y/
+   cp -R ~/sh_tool/conf/  /root/scripts/githuber/ver.x.y/
+   cp -R ~/sh_tool/log/   /root/scripts/githuber/ver.x.y/
 
 Or You can use Docker to create image/container.
 
@@ -70,17 +70,29 @@ Code structure:
 
 .. code-block:: bash
 
-   .
-   ├── bin/
-   │   └── githuber.sh
-   ├── conf/
-   │   ├── githuber.cfg
-   │   ├── githuber_util.cfg
-   │   └── template/
-   │       ├── githuber_guideline.template
-   │       └── githuber_setup.template
-   └── log/
-       └── githuber.log
+    sh_tool/
+    ├── bin/
+    │   ├── deploy_docker.sh
+    │   ├── deploy_guide.sh
+    │   ├── deploy_setup.sh
+    │   ├── drop_to_file.sh
+    │   └── githuber.sh
+    ├── conf/
+    │   ├── githuber.cfg
+    │   ├── githuber_util.cfg
+    │   └── template/
+    │       ├── create_docker_container.template
+    │       ├── create_docker_image.template
+    │       ├── githuber_guideline.template
+    │       ├── githuber_setup_py.template
+    │       ├── githuber_setup_sh.template
+    │       ├── push_docker_image.template
+    │       ├── pypi_deploy.template
+    │       ├── remove_docker_container.template
+    │       ├── remove_docker_image.template
+    │       └── stop_docker_container.template
+    └── log/
+        └── githuber.log
 
 Copyright and licence
 ----------------------
@@ -93,7 +105,7 @@ Copyright and licence
 .. |License: Apache 2.0| image:: https://img.shields.io/badge/License-Apache%202.0-blue.svg
    :target: https://opensource.org/licenses/Apache-2.0
 
-Copyright (C) 2016 by `vroncevic.github.io/githuber <https://vroncevic.github.io/githuber>`_
+Copyright (C) 2017 by `vroncevic.github.io/githuber <https://vroncevic.github.io/githuber>`_
 
 **githuber** is free software; you can redistribute it and/or modify it
 under the same terms as Bash itself, either Bash version 4.2.47 or,

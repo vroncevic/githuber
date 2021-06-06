@@ -1,4 +1,6 @@
-# Generate setup script and github guideline file
+<img align="right" src="https://raw.githubusercontent.com/vroncevic/githuber/dev/docs/githuber_logo.png" width="25%">
+
+# Generate setup scripts and github guideline file
 
 **githuber** is shell tool for generating github structure.
 
@@ -32,11 +34,11 @@ Navigate to release **[page](https://github.com/vroncevic/githuber/releases)** d
 To install **githuber** type the following:
 
 ```
-tar xvzf githuber-x.y.z.tar.gz
-cd githuber-x.y.z
-cp -R ~/sh_tool/bin/   /root/scripts/githuber/ver.1.0/
-cp -R ~/sh_tool/conf/  /root/scripts/githuber/ver.1.0/
-cp -R ~/sh_tool/log/   /root/scripts/githuber/ver.1.0/
+tar xvzf githuber-x.y.tar.gz
+cd githuber-x.y
+cp -R ~/sh_tool/bin/   /root/scripts/githuber/ver.x.y/
+cp -R ~/sh_tool/conf/  /root/scripts/githuber/ver.x.y/
+cp -R ~/sh_tool/log/   /root/scripts/githuber/ver.x.y/
 ```
 
 ![alt tag](https://raw.githubusercontent.com/vroncevic/githuber/dev/docs/setup_tree.png)
@@ -49,13 +51,13 @@ Or You can use docker to create image/container.
 
 ```
 # Create symlink for shell tool
-ln -s /root/scripts/githuber/ver.1.0/bin/githuber.sh /root/bin/githuber
+ln -s /root/scripts/githuber/ver.x.y/bin/githuber.sh /root/bin/githuber
 
 # Setting PATH
 export PATH=${PATH}:/root/bin/
 
 # Generating github structure
-githuber avr_dragon
+githuber avr dragon
 ```
 
 ### Dependencies
@@ -69,15 +71,27 @@ githuber avr_dragon
 
 Code structure:
 ```
-.
+sh_tool/
 ├── bin/
+│   ├── deploy_docker.sh
+│   ├── deploy_guide.sh
+│   ├── deploy_setup.sh
+│   ├── drop_to_file.sh
 │   └── githuber.sh
 ├── conf/
 │   ├── githuber.cfg
 │   ├── githuber_util.cfg
 │   └── template/
+│       ├── create_docker_container.template
+│       ├── create_docker_image.template
 │       ├── githuber_guideline.template
-│       └── githuber_setup.template
+│       ├── githuber_setup_py.template
+│       ├── githuber_setup_sh.template
+│       ├── push_docker_image.template
+│       ├── pypi_deploy.template
+│       ├── remove_docker_container.template
+│       ├── remove_docker_image.template
+│       └── stop_docker_container.template
 └── log/
     └── githuber.log
 ```
@@ -94,7 +108,7 @@ More documentation and info at:
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Copyright (C) 2016 by [vroncevic.github.io/githuber](https://vroncevic.github.io/githuber)
+Copyright (C) 2017 by [vroncevic.github.io/githuber](https://vroncevic.github.io/githuber)
 
 **githuber** is free software; you can redistribute it and/or modify
 it under the same terms as Bash itself, either Bash version 4.2.47 or,

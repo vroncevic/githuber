@@ -1,0 +1,13 @@
+${H}"!/bin/bash"
+${H}
+${H}" @brief   ${BRIEF}"
+${H}" @version ${VERSION}"
+${H}" @date    ${DATE}"
+${H}" @company ${COMPANY}"
+${H}" @author  ${AUTHOR_NAME} <${AUTHOR_EMAIL}>"
+${H}
+
+"REPO=${PRO_NAME}"
+"TAG=latest"
+
+"docker build --no-cache -t \\\${REPO}:\\\${TAG} ./${PRO_NAME}/"
