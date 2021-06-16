@@ -7,7 +7,7 @@
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
 UTIL_ROOT=/root/scripts
-UTIL_VERSION=ver.2.0
+UTIL_VERSION=ver.1.0
 UTIL=${UTIL_ROOT}/sh_util/${UTIL_VERSION}
 UTIL_LOG=${UTIL}/log
 
