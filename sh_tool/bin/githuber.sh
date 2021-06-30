@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # @brief   Project structure formater
-# @version ver.2.0
+# @version ver.2.1
 # @date    Tue Apr 22 21:14:20 CEST 2016
 # @company None, free software to use 2016
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
@@ -21,7 +21,7 @@ UTIL_LOG=${UTIL}/log
 .    ${UTIL}/bin/progress_bar.sh
 
 GITHUBER_TOOL=githuber
-GITHUBER_VERSION=ver.2.0
+GITHUBER_VERSION=ver.2.1
 GITHUBER_HOME=${UTIL_ROOT}/${GITHUBER_TOOL}/${GITHUBER_VERSION}
 GITHUBER_CFG=${GITHUBER_HOME}/conf/${GITHUBER_TOOL}.cfg
 GITHUBER_UTIL_CFG=${GITHUBER_HOME}/conf/${GITHUBER_TOOL}_util.cfg

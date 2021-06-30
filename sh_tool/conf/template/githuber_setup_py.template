@@ -27,7 +27,7 @@ ${T}"mkdir \\\"\\\${PYP_DIR}/\\\""
 
 "${H} Setting PYP directory"
 "if [ -d \\\"\\\${PYP_DIR}/\\\" ]; then"
-${T}"cp -R \\\"\\\${PYP_PKG}" "\\\${PYP_DIR}/\\\""
+${T}"cp -R \\\"\\\${PYP_PKG}\\\" \\\"\\\${PYP_DIR}/\\\""
 ${T}"cp \\\$PYP_REQ \\\"\\\${PYP_DIR}/\\\""
 ${T}"cp \\\$PYP_SETUP \\\"\\\${PYP_DIR}/\\\""
 ${T}"cp \\\$PYP_README \\\"\\\${PYP_DIR}/\\\""
@@ -63,8 +63,8 @@ ${T}"rm -rf \\\"\\\${PYP_DIR}/\\\""
 
 "${H} Setting symbolic link for PYP run"
 "printf \\\"%s\\n\\\" \\\"[setup] Create symbolic links\\\""
-"ln -s \\\"\\\${PYP_RUN_BIN} \\\${ROOT_APP_BIN}/\\\${PYP_NAME}\\\""
-"ln -s \\\"\\\${PYP_RUN_BIN} /home/\\\${DEVUSER}/bin/\\\${PYP_NAME}\\\""
+"ln -s \\\"\\\${PYP_RUN_BIN}\\\" \\\"\\\${ROOT_APP_BIN}/\\\${PYP_NAME}\\\""
+"ln -s \\\"\\\${PYP_RUN_BIN}\\\" \\\"/home/\\\${DEVUSER}/bin/\\\${PYP_NAME}\\\""
 
 "printf \\\"%s\\n\\n\\\" \\\"[Setup] Done\\\""
 
