@@ -3,7 +3,7 @@
 project = u'githuber'
 copyright = u'2017, Vladimir Roncevic <elektron.ronca@gmail.com>'
 author = u'Vladimir Roncevic <elektron.ronca@gmail.com>'
-version = u'2.0'
+version = u'2.1'
 release = u'https://github.com/vroncevic/githuber/releases'
 extensions = []
 templates_path = ['_templates']
