@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # @brief   Project structure formater
-# @version ver.2.1
+# @version ver.3.1
 # @date    Tue Apr 22 21:14:20 CEST 2016
 # @company None, free software to use 2016
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>

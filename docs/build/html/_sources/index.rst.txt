@@ -33,11 +33,16 @@ other information that should be provided before the tool is installed.
 Installation
 -------------
 
+|Debian Linux OS|
+
+.. |Debian Linux OS| image:: https://raw.githubusercontent.com/vroncevic/githuber/dev/docs/debtux.png
+   :target: https://www.debian.org
+
 Navigate to release `page`_ download and extract release archive.
 
 .. _page: https://github.com/vroncevic/githuber/releases
 
-To install **githuber** type the following:
+To install **githuber** type the following
 
 .. code-block:: bash
 
@@ -57,7 +62,7 @@ Or You can use Docker to create image/container.
 Dependencies
 -------------
 
-**githuber** requires next modules and libraries:
+**githuber** requires next modules and libraries
 
 * sh_util `https://github.com/vroncevic/sh_util <https://github.com/vroncevic/sh_util>`_
 
@@ -66,33 +71,45 @@ Shell tool structure
 
 **githuber** is based on MOP.
 
-Code structure:
+Shell tool structure
 
 .. code-block:: bash
 
-    sh_tool/
-    ├── bin/
-    │   ├── deploy_docker.sh
-    │   ├── deploy_guide.sh
-    │   ├── deploy_setup.sh
-    │   ├── drop_to_file.sh
-    │   └── githuber.sh
-    ├── conf/
-    │   ├── githuber.cfg
-    │   ├── githuber_util.cfg
-    │   └── template/
-    │       ├── create_docker_container.template
-    │       ├── create_docker_image.template
-    │       ├── githuber_guideline.template
-    │       ├── githuber_setup_py.template
-    │       ├── githuber_setup_sh.template
-    │       ├── push_docker_image.template
-    │       ├── pypi_deploy.template
-    │       ├── remove_docker_container.template
-    │       ├── remove_docker_image.template
-    │       └── stop_docker_container.template
-    └── log/
-        └── githuber.log
+   sh_tool/
+   ├── bin/
+   │   ├── center.sh
+   │   ├── deploy_build_py.sh
+   │   ├── deploy_codecov.sh
+   │   ├── deploy_docker.sh
+   │   ├── deploy_guide.sh
+   │   ├── deploy_setup.sh
+   │   ├── deploy_venv.sh
+   │   ├── display_logo.sh
+   │   ├── drop_to_file.sh
+   │   └── githuber.sh
+   ├── conf/
+   │   ├── githuber.cfg
+   │   ├── githuber.logo
+   │   ├── githuber_util.cfg
+   │   └── template/
+   │       ├── docker_create_container.template
+   │       ├── docker_create_image.template
+   │       ├── docker_push_image.template
+   │       ├── docker_remove_container.template
+   │       ├── docker_remove_image.template
+   │       ├── docker_stop_container.template
+   │       ├── githuber_guideline.template
+   │       ├── githuber_setup_py.template
+   │       ├── githuber_setup_sh.template
+   │       ├── pypi2_build.template
+   │       ├── pypi3_build.template
+   │       ├── pypi_create.template
+   │       ├── pypi_deploy.template
+   │       ├── update_codecov.template
+   │       ├── venv_create.template
+   │       └── venv_helper.template
+   └── log/
+       └── githuber.log
 
 Copyright and licence
 ----------------------

@@ -1,0 +1,24 @@
+"${H}!/bin/bash"
+${H}
+"${H} @brief   ${BRIEF}"
+"${H} @version ${VERSION}"
+"${H} @date    ${DATE}"
+"${H} @company ${COMPANY}"
+"${H} @author  ${AUTHOR_NAME} <${AUTHOR_EMAIL}>"
+${H}
+
+"TW_DIR_NAME=${PRO_NAME}_pkg"
+
+"${H} Clean up old version"
+"printf \\\"%s\n\\\" \\\"[setup] clean up old pkg dirs \\\${TW_DIR_NAME}/\\\""
+"rm -rf \\\$TW_DIR_NAME"
+
+"${H} Setup new pkg dir"
+"mkdir \\\$TW_DIR_NAME"
+"printf \\\"%s\n\\\" \\\"[setup] create pkg dirs \\\${TW_DIR_NAME}/\\\""
+"cd \\\$TW_DIR_NAME"
+"mkdir dist/ py2/ py3/"
+"tree \\\${TW_DIR_NAME}/"
+
+"${H} Success exit"
+"exit 0"

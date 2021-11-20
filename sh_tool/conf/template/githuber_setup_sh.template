@@ -18,7 +18,7 @@ ${H}
 "APP_CFG_DIR=\\\`pwd\\\`/github/\\\${APP_NAME}/conf/"
 "APP_LOG_DIR=\\\`pwd\\\`/github/\\\${APP_NAME}/log/"
 
-"printf \\\"\\n%s\\n\\t%s\\n\\\" \\\"[Setup] Installing App/Tool/Script \\\${APP_NAME}\\\" \\\"\\\`date\\\`\\\""
+"printf \\\"\\n%s\\n\\t%s\\n\\\" \\\"[setup] Installing App/Tool/Script \\\${APP_NAME}\\\" \\\"\\\`date\\\`\\\""
 
 "${H} Setting dir structure for App/Tool/Script"
 "if [ ! -d \\\"\\\${ROOT_APP_DIR}/\\\" ]; then"
@@ -30,14 +30,14 @@ ${T}"mkdir \\\"\\\${ROOT_APP_DIR}/\\\""
 
 "${H} Setting App/Tool/Script home directory"
 "if [ -d \\\"\\\${APP_HOME_DIR}/\\\" ]; then"
-${T}"printf \\\"%s\\n\\\" \\\"[Setup] Clean up App/Tool/Script structure\\\""
+${T}"printf \\\"%s\\n\\\" \\\"[setup] Clean up App/Tool/Script structure\\\""
 ${T}"rm -rf \\\"\\\${APP_HOME_DIR}/\\\""
 ${T}"rm -f \\\"\\\${ROOT_APP_BIN}/\\\${APP_NAME}\\\""
 "fi"
 
 "mkdir \\\"\\\${APP_HOME_DIR}/\\\""
 "mkdir \\\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/\\\""
-"printf \\\"%s\\n\\\" \\\"[Setup] Copy structure\\\""
+"printf \\\"%s\\n\\\" \\\"[setup] Copy structure\\\""
 
 "${H} Setting App/Tool/Script bin directory"
 "if [ -d \\\"\\\${APP_BIN_DIR}/\\\" ]; then"
@@ -64,18 +64,18 @@ ${T}"exit 127"
 "fi"
 
 "${H} Clean up git env files"
-"printf \\\"%s\\n\\\" \\\"[Setup] Remove github editor configuration files\\\""
+"printf \\\"%s\\n\\\" \\\"[setup] Remove github editor configuration files\\\""
 "find \\\"\\\${ROOT_APP_DIR}/\\\" -name \\\"*.editorconfig\\\" -type f -exec rm -Rf {} \\;"
 
 "${H} Setting permissions"
-"printf \\\"%s\\n\\\" \\\"[Setup] Set App/Tool/Script permission\\\""
+"printf \\\"%s\\n\\\" \\\"[setup] Set App/Tool/Script permission\\\""
 "chmod -R 700 \\\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/\\\""
 
 "${H} Setting symbolic link for App/Tool/Script"
 "printf \\\"%s\\n\\\" \\\"[setup] Create symbolic link of App/Tool/Script\\\""
 "ln -s \\\"\\\${APP_SCRIPT} \\\${ROOT_APP_BIN}/\\\${APP_NAME}\\\""
 
-"printf \\\"%s\\n\\n\\\" \\\"[Setup] Done\\\""
+"printf \\\"%s\\n\\n\\\" \\\"[setup] Done\\\""
 
 "${H} Print tree of App/Tool/Script structure"
 "tree -L 3 \\\"\\\${APP_HOME_DIR}/\\\${APP_VERSION}/\\\""
@@ -83,5 +83,5 @@ ${T}"exit 127"
 "${H} Print symbolic link of App/Tool/Script"
 "ls -all \\\"\\\${ROOT_APP_BIN}/\\\${APP_NAME}/\\\""
 
+"${H} Success exit"
 "exit 0"
-

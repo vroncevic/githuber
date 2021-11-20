@@ -1,9 +1,9 @@
 #!/bin/bash
 #
 # @brief   Project structure formater
-# @version ver.2.1
-# @date    Tue Apr 22 21:14:20 CEST 2016
-# @company None, free software to use 2016
+# @version ver.3.1
+# @date    Fri Nov 19 23:18:20 CEST 2021
+# @company None, free software to use 2021
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
 UTIL_ROOT=/root/scripts
@@ -21,16 +21,25 @@ UTIL_LOG=${UTIL}/log
 .    ${UTIL}/bin/progress_bar.sh
 
 GITHUBER_TOOL=githuber
-GITHUBER_VERSION=ver.2.1
+GITHUBER_VERSION=ver.3.1
 GITHUBER_HOME=${UTIL_ROOT}/${GITHUBER_TOOL}/${GITHUBER_VERSION}
 GITHUBER_CFG=${GITHUBER_HOME}/conf/${GITHUBER_TOOL}.cfg
 GITHUBER_UTIL_CFG=${GITHUBER_HOME}/conf/${GITHUBER_TOOL}_util.cfg
+GITHUBER_LOGO=${GITHUBER_HOME}/conf/${GITHUBER_TOOL}.logo
 GITHUBER_LOG=${GITHUBER_HOME}/log
 
+tabs 4
+CONSOLE_WIDTH=$(stty size | awk '{print $2}')
+
+.    ${GITHUBER_HOME}/bin/center.sh
+.    ${GITHUBER_HOME}/bin/display_logo.sh
 .    ${GITHUBER_HOME}/bin/drop_to_file.sh
 .    ${GITHUBER_HOME}/bin/deploy_guide.sh
 .    ${GITHUBER_HOME}/bin/deploy_setup.sh
 .    ${GITHUBER_HOME}/bin/deploy_docker.sh
+.    ${GITHUBER_HOME}/bin/deploy_build_py.sh
+.    ${GITHUBER_HOME}/bin/deploy_venv.sh
+.    ${GITHUBER_HOME}/bin/deploy_codecov.sh
 
 declare -A GITHUBER_USAGE=(
     [USAGE_TOOL]="${GITHUBER_TOOL}"
@@ -74,6 +83,9 @@ TOOL_NOTIFY="false"
 #            134 - failed to deploy setup script
 #            135 - failed to deploy guide info
 #            136 - failed to deploy docker scripts
+#            137 - failed to deploy build py scripts
+#            138 - failed to deploy venv scripts
+#            139 - failed to deploy codecov scripts
 #
 # @usage
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -82,6 +94,7 @@ TOOL_NOTIFY="false"
 #
 function __githuber {
     local PRO_AREA=$1 PRO_NAME=$2 PRO_NAME_PREFIX=$3 PRO_NAME_POSTFIX=$4
+    display_logo
     if [[ -n "${PRO_AREA}" && -n "${PRO_NAME}" ]]; then
         local FUNC=${FUNCNAME[0]} MSG="None"
         local STATUS_CONF STATUS_CONF_UTIL STATUS
@@ -174,6 +187,27 @@ function __githuber {
                         info_debug_message_end "$MSG" "$FUNC" "$GITHUBER_TOOL"
                         exit 136
                     fi
+                    deploy_build_py config_githuber_util $GITHUB_DIR $PRO_NAME
+                    STATUS=$?
+                    if [ $STATUS -eq $NOT_SUCCESS ]; then
+                        MSG="Force exit!"
+                        info_debug_message_end "$MSG" "$FUNC" "$GITHUBER_TOOL"
+                        exit 137
+                    fi
+                    deploy_venv config_githuber_util $GITHUB_DIR $PRO_NAME
+                    STATUS=$?
+                    if [ $STATUS -eq $NOT_SUCCESS ]; then
+                        MSG="Force exit!"
+                        info_debug_message_end "$MSG" "$FUNC" "$GITHUBER_TOOL"
+                        exit 138
+                    fi
+                    deploy_codecov config_githuber_util $GITHUB_DIR $PRO_NAME
+                    STATUS=$?
+                    if [ $STATUS -eq $NOT_SUCCESS ]; then
+                        MSG="Force exit!"
+                        info_debug_message_end "$MSG" "$FUNC" "$GITHUBER_TOOL"
+                        exit 139
+                    fi
                     MSG="Set owner!"
                     info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
                     eval "chown -R ${USERID}.${GROUPID} ${PRO_DIR}/"
@@ -229,4 +263,3 @@ if [ $STATUS -eq $SUCCESS ]; then
 fi
 
 exit 127
-

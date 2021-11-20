@@ -1,0 +1,25 @@
+${H}"!/bin/bash"
+${H}
+${H}" @brief   ${BRIEF}"
+${H}" @version ${VERSION}"
+${H}" @date    ${DATE}"
+${H}" @company ${COMPANY}"
+${H}" @author  ${AUTHOR_NAME} <${AUTHOR_EMAIL}>"
+${H}
+
+"GH_TOKEN_PATH=/home/${USERID}/GH_TOKEN.txt"
+"HUB_DOCK_SRV=docker.pkg.github.com"
+"REPO=${PRO_NAME}"
+"USR=${USERID}"
+
+"${H} Update"
+"IMAGE_ID="
+"IMG_NAME=${PRO_NAME}"
+"VER=1.0.0"
+
+"cat \\\${GH_TOKEN_PATH} | docker login \\\${HUB_DOCK_SRV} -u \\\${USR} --password-stdin"
+"docker tag \\\${IMAGE_ID} \\\${HUB_DOCK_SRV}/\\\${USR}/\\\${REPO}/\\\${IMG_NAME}:\\\${VER}"
+"docker push \\\${HUB_DOCK_SRV}/\\\${USR}/\\\${REPO}/\\\${IMG_NAME}:\\\${VER}"
+
+"# Success exit"
+"exit 0"
