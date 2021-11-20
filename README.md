@@ -118,15 +118,15 @@ Sat 20 Nov 2021 08:56:38 AM CET
 [check_root] Check permission for current session? [ok]
 [check_root] Done
 
-															       _ _   _           _               
-															  ___ (_) |_| |__  _   _| |__   ___ _ __ 
-															 / _ \| | __| '_ \| | | | '_ \ / _ \ '__|
-															| (_| | | |_| | | | |_| | |_) |  __/ |   
-															 \__/ |_|\__|_| |_|\___/|_.__/ \___|_|   
-															 |___/ 
-																	Info   github.io/githuber ver.3.1 
-																	Issue  github.io/issue
-																	Author vroncevic.github.io
+			       _ _   _           _               
+			  ___ (_) |_| |__  _   _| |__   ___ _ __ 
+			 / _ \| | __| '_ \| | | | '_ \ / _ \ '__|
+			| (_| | | |_| | | | |_| | |_) |  __/ |   
+			 \__/ |_|\__|_| |_|\___/|_.__/ \___|_|   
+			 |___/ 
+					Info   github.io/githuber ver.3.1 
+					Issue  github.io/issue
+					Author vroncevic.github.io
 
 [githuber] Loading basic and util configuration!
 100% [================================================]
