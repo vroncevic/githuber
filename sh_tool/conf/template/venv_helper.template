@@ -1,0 +1,29 @@
+"${H}!/bin/bash"
+${H}
+"${H} @brief   ${BRIEF}"
+"${H} @version ${VERSION}"
+"${H} @date    ${DATE}"
+"${H} @company ${COMPANY}"
+"${H} @author  ${AUTHOR_NAME} <${AUTHOR_EMAIL}>"
+${H}
+
+"${H} Doc"
+"function __venv_helper {"
+"${T}read -r -d '' END_HELP_TXT <<- END_HELP_TXT"
+"${H}${H}${H} Create virtual env (no arguments)"
+"${T}./venv_create.sh"
+
+"${H}${H}${H} Start venv"
+"${T}source env/bin/activate"
+
+"${H}${H}${H} Stop venv (no arguments)"
+"${T}deactivate"
+
+"END_HELP_TXT"
+"${T}echo \\\"\\\$END_HELP_TXT\\\""
+"}"
+
+"__venv_helper"
+
+"${H} Success exit"
+"exit 0"

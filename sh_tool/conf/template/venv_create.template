@@ -1,0 +1,19 @@
+"${H}!/bin/bash"
+${H}
+"${H} @brief   ${BRIEF}"
+"${H} @version ${VERSION}"
+"${H} @date    ${DATE}"
+"${H} @company ${COMPANY}"
+"${H} @author  ${AUTHOR_NAME} <${AUTHOR_EMAIL}>"
+${H}
+
+"python3 -m venv env"
+"printf \\\"%s\n\\\" \\\"Execute next commands in venv\\\""
+"printf \\\"%s\n\\\" \\\"source env/bin/activate\\\""
+"printf \\\"%s\n\\\" \\\"python3 -m pip install --upgrade pip\\\""
+"printf \\\"%s\n\\\" \\\"python3 -m pip install --upgrade build\\\""
+"printf \\\"%s\n\\\" \\\"python3 -m pip install --upgrade twine\\\""
+"printf \\\"%s\n\\\" \\\"pip install wheel\\\""
+
+"${H} Success exit"
+"exit 0"

@@ -29,9 +29,11 @@ other information that should be provided before the modules are installed.
 
 ### Installation
 
+![Debian Linux OS](https://raw.githubusercontent.com/vroncevic/githuber/dev/docs/debtux.png)
+
 Navigate to release **[page](https://github.com/vroncevic/githuber/releases)** download and extract release archive.
 
-To install **githuber** type the following:
+To install **githuber** type the following
 
 ```
 tar xvzf githuber-x.y.tar.gz
@@ -41,7 +43,58 @@ cp -R ~/sh_tool/conf/  /root/scripts/githuber/ver.x.y/
 cp -R ~/sh_tool/log/   /root/scripts/githuber/ver.x.y/
 ```
 
-![alt tag](https://raw.githubusercontent.com/vroncevic/githuber/dev/docs/setup_tree.png)
+Self generated setup script and execution
+```
+./githuber_setup.sh 
+
+[Setup] Installing App/Tool/Script githuber
+	Sat 20 Nov 2021 08:51:28 AM CET
+[Setup] Clean up App/Tool/Script structure
+[Setup] Copy App/Tool/Script structure
+[Setup] Remove github editor configuration files
+[Setup] Set App/Tool/Script permission
+[setup] Create symbolic link of App/Tool/Script
+[Setup] Done
+
+/root/scripts/githuber/ver.3.1/
+├── bin
+│   ├── center.sh
+│   ├── deploy_build_py.sh
+│   ├── deploy_codecov.sh
+│   ├── deploy_docker.sh
+│   ├── deploy_guide.sh
+│   ├── deploy_setup.sh
+│   ├── deploy_venv.sh
+│   ├── display_logo.sh
+│   ├── drop_to_file.sh
+│   └── githuber.sh
+├── conf
+│   ├── githuber.cfg
+│   ├── githuber.logo
+│   ├── githuber_util.cfg
+│   └── template
+│       ├── docker_create_container.template
+│       ├── docker_create_image.template
+│       ├── docker_push_image.template
+│       ├── docker_remove_container.template
+│       ├── docker_remove_image.template
+│       ├── docker_stop_container.template
+│       ├── githuber_guideline.template
+│       ├── githuber_setup_py.template
+│       ├── githuber_setup_sh.template
+│       ├── pypi2_build.template
+│       ├── pypi3_build.template
+│       ├── pypi_create.template
+│       ├── pypi_deploy.template
+│       ├── update_codecov.template
+│       ├── venv_create.template
+│       └── venv_helper.template
+└── log
+    └── githuber.log
+
+4 directories, 30 files
+lrwxrwxrwx 1 root root 46 Nov 20 08:51 /root/bin/githuber -> /root/scripts/githuber/ver.3.1/bin/githuber.sh
+```
 
 Or You can use docker to create image/container.
 
@@ -57,41 +110,147 @@ ln -s /root/scripts/githuber/ver.x.y/bin/githuber.sh /root/bin/githuber
 export PATH=${PATH}:/root/bin/
 
 # Generating github structure
-githuber avr dragon
+githuber python test
+                                                                                                                                                                        
+githuber ver.3.1
+Sat 20 Nov 2021 08:56:38 AM CET
+
+[check_root] Check permission for current session? [ok]
+[check_root] Done
+
+															       _ _   _           _               
+															  ___ (_) |_| |__  _   _| |__   ___ _ __ 
+															 / _ \| | __| '_ \| | | | '_ \ / _ \ '__|
+															| (_| | | |_| | | | |_| | |_) |  __/ |   
+															 \__/ |_|\__|_| |_|\___/|_.__/ \___|_|   
+															 |___/ 
+																	Info   github.io/githuber ver.3.1 
+																	Issue  github.io/issue
+																	Author vroncevic.github.io
+
+[githuber] Loading basic and util configuration!
+100% [================================================]
+
+[load_conf] Loading App/Tool/Script configuration!
+[check_cfg] Checking configuration file [/root/scripts/githuber/ver.3.1/conf/githuber.cfg] [ok]
+[check_cfg] Done
+
+[load_conf] Done
+
+[load_util_conf] Load module configuration!
+[check_cfg] Checking configuration file [/root/scripts/githuber/ver.3.1/conf/githuber_util.cfg] [ok]
+[check_cfg] Done
+
+[load_util_conf] Done
+
+[githuber] Checking directory [/data/dev/]? [ok]
+[githuber] Checking directory [/data/dev/python/]? [ok]
+[githuber] Generating directory [/data/dev/python/test/]
+[githuber] Generating file [/data/dev/python/test/test_setup.sh]
+[githuber] Generating file [/data/dev/python/test/test_git.txt]
+[githuber] Generating directory [/data/dev/python/test/docs/]
+[githuber] Generating directory [/data/dev/python/test/github/]
+[githuber] Generating directory [/data/dev/python/test/github/test//]
+[githuber] Generating file [/data/dev/python/test/github/docker_create_image.sh]
+[githuber] Generating file [/data/dev/python/test/github/docker_create_container.sh]
+[githuber] Generating file [/data/dev/python/test/github/docker_push_image.sh]
+[githuber] Generating file [/data/dev/python/test/github/docker_stop_container.sh]
+[githuber] Generating file [/data/dev/python/test/github/docker_remove_container.sh]
+[githuber] Generating file [/data/dev/python/test/github/docker_remove_image.sh]
+
+	==============================
+	# [1] Python 2
+	# [2] Python 3
+	# [3] Python 2/3
+	==============================
+	Select Python support option >	3
+	Option Python 2 and Python 3 Picked
+
+[githuber] Generating file [/data/dev/python/test/github/pypi_create.sh]
+[githuber] Generating file [/data/dev/python/test/github/pypi_deploy.sh]
+[githuber] Generating file [/data/dev/python/test/github/pypi2_build.sh]
+[githuber] Generating file [/data/dev/python/test/github/pypi3_build.sh]
+[githuber] Generating file [/data/dev/python/test/github/venv_create.sh]
+[githuber] Generating file [/data/dev/python/test/github/venv_helper.sh]
+[githuber] Generating file [/data/dev/python/test/github/update_codecov.sh]
+[githuber] Set owner!
+[githuber] Set permission!
+[logging] Checking directory [/root/scripts/githuber/ver.3.1/log/]? [ok]
+[logging] Write info log!
+[logging] Done
+
+[githuber] Done
+
+[check_tool] Checking tool [/usr/bin/tree]? [ok]
+[check_tool] Done
+
+/data/dev/python/test/
+├── docs
+├── github
+│   ├── docker_create_container.sh
+│   ├── docker_create_image.sh
+│   ├── docker_push_image.sh
+│   ├── docker_remove_container.sh
+│   ├── docker_remove_image.sh
+│   ├── docker_stop_container.sh
+│   ├── pypi2_build.sh
+│   ├── pypi3_build.sh
+│   ├── pypi_create.sh
+│   ├── pypi_deploy.sh
+│   ├── test
+│   ├── update_codecov.sh
+│   ├── venv_create.sh
+│   └── venv_helper.sh
+├── test_git.txt
+└── test_setup.sh
+
+3 directories, 15 files
 ```
 
 ### Dependencies
 
-**githuber** requires next modules and libraries:
+**githuber** requires next modules and libraries
 * sh_util [https://github.com/vroncevic/sh_util](https://github.com/vroncevic/sh_util)
 
 ### Shell tool structure
 
 **githuber** is based on MOP.
 
-Code structure:
+Shell tool structure
 ```
 sh_tool/
 ├── bin/
+│   ├── center.sh
+│   ├── deploy_build_py.sh
+│   ├── deploy_codecov.sh
 │   ├── deploy_docker.sh
 │   ├── deploy_guide.sh
 │   ├── deploy_setup.sh
+│   ├── deploy_venv.sh
+│   ├── display_logo.sh
 │   ├── drop_to_file.sh
 │   └── githuber.sh
 ├── conf/
 │   ├── githuber.cfg
+│   ├── githuber.logo
 │   ├── githuber_util.cfg
 │   └── template/
-│       ├── create_docker_container.template
-│       ├── create_docker_image.template
+│       ├── docker_create_container.template
+│       ├── docker_create_image.template
+│       ├── docker_push_image.template
+│       ├── docker_remove_container.template
+│       ├── docker_remove_image.template
+│       ├── docker_stop_container.template
 │       ├── githuber_guideline.template
 │       ├── githuber_setup_py.template
 │       ├── githuber_setup_sh.template
-│       ├── push_docker_image.template
+│       ├── pypi2_build.template
+│       ├── pypi3_build.template
+│       ├── pypi_create.template
 │       ├── pypi_deploy.template
-│       ├── remove_docker_container.template
-│       ├── remove_docker_image.template
-│       └── stop_docker_container.template
+│       ├── update_codecov.template
+│       ├── venv_create.template
+│       └── venv_helper.template
 └── log/
     └── githuber.log
 ```
@@ -100,7 +259,7 @@ sh_tool/
 
 [![Documentation Status](https://readthedocs.org/projects/githuber/badge/?version=latest)](https://githuber.readthedocs.io/projects/githuber/en/latest/?badge=latest)
 
-More documentation and info at:
+More documentation and info at
 * [https://githuber.readthedocs.io/en/latest/](https://githuber.readthedocs.io/en/latest/)
 * [https://www.gnu.org/software/bash/manual/](https://www.gnu.org/software/bash/manual/)
 

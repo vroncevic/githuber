@@ -1,21 +1,21 @@
 #!/bin/bash
 #
 # @brief   Project structure formater
-# @version ver.2.1
+# @version ver.3.1
 # @date    Tue Apr 22 21:14:20 CEST 2016
 # @company None, free software to use 2016
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
 
 #
-# @brief  deploy guide info file for github project
-# @param  Values required project dir, project name, and util configuration
+# @brief  Deploy guide info file for github project
+# @param  Values required util configuration, project dir and project name 
 # @retval Success return 0, else return 1
 #
 # @usage
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #
-# deploy_guide $PRO_DIR $PRO_NAME config_githuber_util
+# deploy_guide config_githuber_util $PRO_DIR $PRO_NAME
 # local STATUS=$?
 #
 # if [ $STATUS -eq $SUCCESS ]; then

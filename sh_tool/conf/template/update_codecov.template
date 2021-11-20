@@ -1,0 +1,22 @@
+"${H}!/bin/bash"
+${H}
+"${H} @brief   ${BRIEF}"
+"${H} @version ${VERSION}"
+"${H} @date    ${DATE}"
+"${H} @company ${COMPANY}"
+"${H} @author  ${AUTHOR_NAME} <${AUTHOR_EMAIL}>"
+${H}
+
+"REPO_NAME=${PRO_NAME}"
+"TEST_DIR=tests"
+"cd \\\${REPO_NAME}/\\\${TEST_DIR}/"
+"pytest --cov=./ --cov-report=xml"
+
+"read -p \\\"Upload code coverage statistics? \\\" -n 1 -r"
+"echo"
+"if [[ \\\$REPLY =~ ^[Yy]$ ]]; then"
+"${T}codecov -t <TOKEN_ID>"
+"fi"
+
+"${H} Success exit"
+"exit 0"
