@@ -124,9 +124,9 @@ Sat 20 Nov 2021 08:56:38 AM CET
 			| (_| | | |_| | | | |_| | |_) |  __/ |   
 			 \__/ |_|\__|_| |_|\___/|_.__/ \___|_|   
 			 |___/ 
-					Info   github.io/githuber ver.3.1 
-					Issue  github.io/issue
-					Author vroncevic.github.io
+				Info   github.io/githuber ver.3.1 
+				Issue  github.io/issue
+				Author vroncevic.github.io
 
 [githuber] Loading basic and util configuration!
 100% [================================================]
