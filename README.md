@@ -47,17 +47,17 @@ Self generated setup script and execution
 ```
 ./githuber_setup.sh 
 
-[Setup] Installing App/Tool/Script githuber
-	Sat 20 Nov 2021 08:51:28 AM CET
-[Setup] Clean up App/Tool/Script structure
-[Setup] Copy App/Tool/Script structure
-[Setup] Remove github editor configuration files
-[Setup] Set App/Tool/Script permission
-[setup] Create symbolic link of App/Tool/Script
-[Setup] Done
+[setup] installing App/Tool/Script githuber
+	Sun 21 Nov 2021 10:46:08 AM CET
+[setup] clean up App/Tool/Script structure
+[setup] copy App/Tool/Script structure
+[setup] remove github editor configuration files
+[setup] Set App/Tool/Script permission
+[setup] create symbolic link of App/Tool/Script
+[setup] done
 
-/root/scripts/githuber/ver.3.1/
-├── bin
+/root/scripts/githuber/ver.4.1/
+├── bin/
 │   ├── center.sh
 │   ├── deploy_build_py.sh
 │   ├── deploy_codecov.sh
@@ -68,11 +68,11 @@ Self generated setup script and execution
 │   ├── display_logo.sh
 │   ├── drop_to_file.sh
 │   └── githuber.sh
-├── conf
+├── conf/
 │   ├── githuber.cfg
 │   ├── githuber.logo
 │   ├── githuber_util.cfg
-│   └── template
+│   └── template/
 │       ├── docker_create_container.template
 │       ├── docker_create_image.template
 │       ├── docker_push_image.template
@@ -89,11 +89,11 @@ Self generated setup script and execution
 │       ├── update_codecov.template
 │       ├── venv_create.template
 │       └── venv_helper.template
-└── log
+└── log/
     └── githuber.log
 
 4 directories, 30 files
-lrwxrwxrwx 1 root root 46 Nov 20 08:51 /root/bin/githuber -> /root/scripts/githuber/ver.3.1/bin/githuber.sh
+lrwxrwxrwx 1 root root 46 Nov 21 10:46 /root/bin/githuber -> /root/scripts/githuber/ver.4.1/bin/githuber.sh
 ```
 
 Or You can use docker to create image/container.
@@ -112,8 +112,8 @@ export PATH=${PATH}:/root/bin/
 # Generating github structure
 githuber python test
                                                                                                                                                                         
-githuber ver.3.1
-Sat 20 Nov 2021 08:56:38 AM CET
+githuber ver.4.1
+Sun 21 Nov 2021 10:46:08 AM CET
 
 [check_root] Check permission for current session? [ok]
 [check_root] Done
@@ -124,7 +124,7 @@ Sat 20 Nov 2021 08:56:38 AM CET
 			| (_| | | |_| | | | |_| | |_) |  __/ |   
 			 \__/ |_|\__|_| |_|\___/|_.__/ \___|_|   
 			 |___/ 
-				Info   github.io/githuber ver.3.1 
+				Info   github.io/githuber ver.4.1 
 				Issue  github.io/issue
 				Author vroncevic.github.io
 
@@ -132,13 +132,13 @@ Sat 20 Nov 2021 08:56:38 AM CET
 100% [================================================]
 
 [load_conf] Loading App/Tool/Script configuration!
-[check_cfg] Checking configuration file [/root/scripts/githuber/ver.3.1/conf/githuber.cfg] [ok]
+[check_cfg] Checking configuration file [/root/scripts/githuber/ver.4.1/conf/githuber.cfg] [ok]
 [check_cfg] Done
 
 [load_conf] Done
 
 [load_util_conf] Load module configuration!
-[check_cfg] Checking configuration file [/root/scripts/githuber/ver.3.1/conf/githuber_util.cfg] [ok]
+[check_cfg] Checking configuration file [/root/scripts/githuber/ver.4.1/conf/githuber_util.cfg] [ok]
 [check_cfg] Done
 
 [load_util_conf] Done
@@ -175,7 +175,7 @@ Sat 20 Nov 2021 08:56:38 AM CET
 [githuber] Generating file [/data/dev/python/test/github/update_codecov.sh]
 [githuber] Set owner!
 [githuber] Set permission!
-[logging] Checking directory [/root/scripts/githuber/ver.3.1/log/]? [ok]
+[logging] Checking directory [/root/scripts/githuber/ver.4.1/log/]? [ok]
 [logging] Write info log!
 [logging] Done
 

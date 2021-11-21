@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 # @brief   Project structure formater
-# @version ver.3.1
-# @date    Fri Nov 19 23:18:20 CEST 2021
+# @version ver.4.1
+# @date    Sun 21 Nov 2021 10:27:58 AM CET
 # @company None, free software to use 2021
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
@@ -18,8 +18,8 @@
 # option_picked "simple message"
 #
 function option_picked {
-    local message=${@:-"error: no message passed"}
-    printf "\t\033[1m${message}\033[0m\n\n"
+    local MESSAGE=${@:-"error: no message passed"}
+    printf "\t\033[1m${MESSAGE}\033[0m\n\n"
 }
 
 #
@@ -53,12 +53,12 @@ function list_py_support {
 # local OPTION=$?
 #
 function select_py_support {
-    local opt=0
+    local OPT=0
     list_py_support
-    read opt
-    while [[ $opt != '' || $opt != *$'\n' ]]
+    read OPT
+    while [[ $OPT != '' || $OPT != *$'\n' ]]
     do
-        case $opt in
+        case $OPT in
             1)
                 option_picked "Option Python 2 Picked";
                 break
@@ -81,7 +81,7 @@ function select_py_support {
                 ;;
         esac
     done
-    return $opt
+    return $OPT
 }
 
 #
