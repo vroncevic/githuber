@@ -11,3 +11,6 @@ ${H}
 "TAG=latest"
 
 "docker image rm \\\${REPO}:\\\${TAG}"
+
+"# Success exit"
+"exit 0"
