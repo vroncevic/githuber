@@ -7,8 +7,8 @@ Developed in `bash <https://en.wikipedia.org/wiki/Bash_(Unix_shell)>`_ code: **1
 
 |GitHub shell checker|
 
-.. |GitHub shell checker| image:: https://github.com/vroncevic/githuber/workflows/githuber%20shell%20checker/badge.svg
-   :target: https://github.com/vroncevic/githuber/actions?query=workflow%3A%22githuber+shell+checker%22
+.. |GitHub shell checker| image:: https://github.com/vroncevic/githuber/actions/workflows/githuber_shell_checker.yml/badge.svg
+   :target: https://github.com/vroncevic/githuber/actions/workflows/githuber_shell_checker.yml
 
 The README is used to introduce the tool and provide instructions on
 how to install the tool, any machine dependencies it may have and any
@@ -53,11 +53,6 @@ To install **githuber** type the following
    cp -R ~/sh_tool/log/   /root/scripts/githuber/ver.x.y/
 
 Or You can use Docker to create image/container.
-
-|GitHub docker checker|
-
-.. |GitHub docker checker| image:: https://github.com/vroncevic/githuber/workflows/githuber%20docker%20checker/badge.svg
-   :target: https://github.com/vroncevic/githuber/actions?query=workflow%3A%22githuber+docker+checker%22
 
 Dependencies
 -------------
@@ -122,7 +117,7 @@ Copyright and licence
 .. |License: Apache 2.0| image:: https://img.shields.io/badge/License-Apache%202.0-blue.svg
    :target: https://opensource.org/licenses/Apache-2.0
 
-Copyright (C) 2017 by `vroncevic.github.io/githuber <https://vroncevic.github.io/githuber>`_
+Copyright (C) 2017 - 2024 by `vroncevic.github.io/githuber <https://vroncevic.github.io/githuber>`_
 
 **githuber** is free software; you can redistribute it and/or modify it
 under the same terms as Bash itself, either Bash version 4.2.47 or,
