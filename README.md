@@ -1,6 +1,6 @@
-<img align="right" src="https://raw.githubusercontent.com/vroncevic/githuber/dev/docs/githuber_logo.png" width="25%">
-
 # Generate setup scripts and github guideline file
+
+<img align="right" src="https://raw.githubusercontent.com/vroncevic/githuber/dev/docs/githuber_logo.png" width="25%">
 
 **githuber** is shell tool for generating github structure.
 
@@ -35,7 +35,7 @@ Navigate to release **[page](https://github.com/vroncevic/githuber/releases)** d
 
 To install **githuber** type the following
 
-```
+```bash
 tar xvzf githuber-x.y.tar.gz
 cd githuber-x.y
 cp -R ~/sh_tool/bin/   /root/scripts/githuber/ver.x.y/
@@ -44,7 +44,8 @@ cp -R ~/sh_tool/log/   /root/scripts/githuber/ver.x.y/
 ```
 
 Self generated setup script and execution
-```
+
+```bash
 ./githuber_setup.sh 
 
 [setup] installing App/Tool/Script githuber
@@ -100,7 +101,7 @@ Or You can use docker to create image/container.
 
 ### Usage
 
-```
+```bash
 # Create symlink for shell tool
 ln -s /root/scripts/githuber/ver.x.y/bin/githuber.sh /root/bin/githuber
 
@@ -218,7 +219,8 @@ Sun 21 Nov 2021 10:46:08 AM CET
 **githuber** is based on MOP.
 
 Shell tool structure
-```
+
+```bash
 sh_tool/
 ├── bin/
 │   ├── center.sh
