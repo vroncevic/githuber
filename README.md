@@ -57,7 +57,7 @@ Self generated setup script and execution
 [setup] create symbolic link of App/Tool/Script
 [setup] done
 
-/root/scripts/githuber/ver.4.1/
+/root/scripts/githuber/ver.4.2/
 ├── bin/
 │   ├── center.sh
 │   ├── deploy_build_py.sh
@@ -94,7 +94,7 @@ Self generated setup script and execution
     └── githuber.log
 
 4 directories, 30 files
-lrwxrwxrwx 1 root root 46 Nov 21 10:46 /root/bin/githuber -> /root/scripts/githuber/ver.4.1/bin/githuber.sh
+lrwxrwxrwx 1 root root 46 Nov 21 10:46 /root/bin/githuber -> /root/scripts/githuber/ver.4.2/bin/githuber.sh
 ```
 
 Or You can use docker to create image/container.
@@ -111,7 +111,7 @@ export PATH=${PATH}:/root/bin/
 # Generating github structure
 githuber python test
                                                                                                                                                                         
-githuber ver.4.1
+githuber ver.4.2
 Sun 21 Nov 2021 10:46:08 AM CET
 
 [check_root] Check permission for current session? [ok]
@@ -126,7 +126,7 @@ Sun 21 Nov 2021 10:46:08 AM CET
    ░░░░░██░██  ░░██ ░██  ░██░░██████░██████ ░░██████░███     
     █████ ░░    ░░  ░░   ░░  ░░░░░░ ░░░░░    ░░░░░░ ░░░      
    ░░░░░                                                     
-				Info   github.io/githuber ver.4.1 
+				Info   github.io/githuber ver.4.2 
 				Issue  github.io/issue
 				Author vroncevic.github.io
 
@@ -134,13 +134,13 @@ Sun 21 Nov 2021 10:46:08 AM CET
 100% [================================================]
 
 [load_conf] Loading App/Tool/Script configuration!
-[check_cfg] Checking configuration file [/root/scripts/githuber/ver.4.1/conf/githuber.cfg] [ok]
+[check_cfg] Checking configuration file [/root/scripts/githuber/ver.4.2/conf/githuber.cfg] [ok]
 [check_cfg] Done
 
 [load_conf] Done
 
 [load_util_conf] Load module configuration!
-[check_cfg] Checking configuration file [/root/scripts/githuber/ver.4.1/conf/githuber_util.cfg] [ok]
+[check_cfg] Checking configuration file [/root/scripts/githuber/ver.4.2/conf/githuber_util.cfg] [ok]
 [check_cfg] Done
 
 [load_util_conf] Done
@@ -177,7 +177,7 @@ Sun 21 Nov 2021 10:46:08 AM CET
 [githuber] Generating file [/data/dev/python/test/github/update_codecov.sh]
 [githuber] Set owner!
 [githuber] Set permission!
-[logging] Checking directory [/root/scripts/githuber/ver.4.1/log/]? [ok]
+[logging] Checking directory [/root/scripts/githuber/ver.4.2/log/]? [ok]
 [logging] Write info log!
 [logging] Done
 
