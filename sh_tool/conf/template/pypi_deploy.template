@@ -11,9 +11,12 @@ ${H}
 "TW_DIR_NAME=${PRO_NAME}_pkg"
 "PYPI_URL=https://upload.pypi.org/legacy/"
 
+"${H} Check process"
+"twine check ./\\\${TW_DIR_NAME}/dist/*"
+
 "${H} Deploying process"
 "cd \\\$TW_DIR_NAME"
-"python -m twine upload --repository-url \\\$PYPI_URL dist/* --verbose"
+"twine upload ./\\\${TW_DIR_NAME}/dist/* --verbose"
 
 "${H} Success exit"
 "exit 0"

@@ -35,12 +35,12 @@ RUN rm -Rf v1.0.zip sh_util-1.0
 RUN mkdir /sh_tool/
 COPY sh_tool /sh_tool/
 RUN find /sh_tool/ -name "*.editorconfig" -type f -exec rm -Rf {} \;
-RUN mkdir -p /root/scripts/githuber/ver.4.1/
+RUN mkdir -p /root/scripts/githuber/ver.4.2/
 RUN mkdir /root/bin/
-RUN cp -R /sh_tool/bin/   /root/scripts/githuber/ver.4.1/
-RUN cp -R /sh_tool/conf/  /root/scripts/githuber/ver.4.1/
-RUN cp -R /sh_tool/log/   /root/scripts/githuber/ver.4.1/
+RUN cp -R /sh_tool/bin/   /root/scripts/githuber/ver.4.2/
+RUN cp -R /sh_tool/conf/  /root/scripts/githuber/ver.4.2/
+RUN cp -R /sh_tool/log/   /root/scripts/githuber/ver.4.2/
 RUN rm -Rf /sh_tool/
-RUN chmod -R 755 /root/scripts/githuber/ver.4.1/
-RUN ln -s /root/scripts/githuber/ver.4.1/bin/githuber.sh /root/bin/githuber
-RUN tree /root/scripts/githuber/ver.4.1/
+RUN chmod -R 755 /root/scripts/githuber/ver.4.2/
+RUN ln -s /root/scripts/githuber/ver.4.2/bin/githuber.sh /root/bin/githuber
+RUN tree /root/scripts/githuber/ver.4.2/
