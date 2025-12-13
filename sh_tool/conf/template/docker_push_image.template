@@ -15,7 +15,7 @@ ${H}
 "${H} Update"
 "IMAGE_ID="
 "IMG_NAME=${PRO_NAME}"
-"VER=1.0.0"
+"VER=1.0"
 
 "cat \\\${GH_TOKEN_PATH} | docker login \\\${HUB_DOCK_SRV} -u \\\${USR} --password-stdin"
 "docker tag \\\${IMAGE_ID} \\\${HUB_DOCK_SRV}/\\\${USR}/\\\${REPO}/\\\${IMG_NAME}:\\\${VER}"
