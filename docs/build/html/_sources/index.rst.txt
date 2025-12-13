@@ -46,11 +46,11 @@ To install **githuber** type the following
 
 .. code-block:: bash
 
-   tar xvzf githuber-x.y.tar.gz
-   cd githuber-x.y
-   cp -R ~/sh_tool/bin/   /root/scripts/githuber/ver.x.y/
-   cp -R ~/sh_tool/conf/  /root/scripts/githuber/ver.x.y/
-   cp -R ~/sh_tool/log/   /root/scripts/githuber/ver.x.y/
+   tar xvzf githuber-5.2.tar.gz
+   cd githuber-5.2
+   cp -R ~/sh_tool/bin/   /root/scripts/githuber/ver.5.2/
+   cp -R ~/sh_tool/conf/  /root/scripts/githuber/ver.5.2/
+   cp -R ~/sh_tool/log/   /root/scripts/githuber/ver.5.2/
 
 Or You can use Docker to create image/container.
 
@@ -72,14 +72,11 @@ Shell tool structure
 
    sh_tool/
    ├── bin/
-   │   ├── center.sh
    │   ├── deploy_build_py.sh
-   │   ├── deploy_codecov.sh
    │   ├── deploy_docker.sh
    │   ├── deploy_guide.sh
    │   ├── deploy_setup.sh
    │   ├── deploy_venv.sh
-   │   ├── display_logo.sh
    │   ├── drop_to_file.sh
    │   └── githuber.sh
    ├── conf/
@@ -96,11 +93,9 @@ Shell tool structure
    │       ├── githuber_guideline.template
    │       ├── githuber_setup_py.template
    │       ├── githuber_setup_sh.template
-   │       ├── pypi2_build.template
    │       ├── pypi3_build.template
    │       ├── pypi_create.template
    │       ├── pypi_deploy.template
-   │       ├── update_codecov.template
    │       ├── venv_create.template
    │       └── venv_helper.template
    └── log/
@@ -117,7 +112,7 @@ Copyright and licence
 .. |License: Apache 2.0| image:: https://img.shields.io/badge/License-Apache%202.0-blue.svg
    :target: https://opensource.org/licenses/Apache-2.0
 
-Copyright (C) 2017 - 2024 by `vroncevic.github.io/githuber <https://vroncevic.github.io/githuber>`_
+Copyright (C) 2017 - 2026 by `vroncevic.github.io/githuber <https://vroncevic.github.io/githuber>`_
 
 **githuber** is free software; you can redistribute it and/or modify it
 under the same terms as Bash itself, either Bash version 4.2.47 or,

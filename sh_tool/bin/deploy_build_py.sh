@@ -1,88 +1,22 @@
 #!/bin/bash
 #
 # @brief   Project structure formater
-# @version ver.4.2
+# @version ver.5.2
 # @date    Sun 21 Nov 2021 10:27:58 AM CET
 # @company None, free software to use 2021
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
+UTIL_ROOT=/root/scripts
+UTIL_VERSION=ver.1.0
+UTIL=${UTIL_ROOT}/sh_util/${UTIL_VERSION}
 
-#
-# @brief  Display selected option
-# @param  Values required message
-# @retval None
-#
-# @usage
-# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-#
-# option_picked "simple message"
-#
-function option_picked {
-    local MESSAGE=${@:-"error: no message passed"}
-    printf "\t\033[1m${MESSAGE}\033[0m\n\n"
-}
+.    ${UTIL}/bin/devel.sh
 
-#
-# @brief  List support options for Python packages
-# @param  None
-# @retval None
-#
-# @usage
-# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-#
-# list_py_support
-#
-function list_py_support {
-    printf "\n\t==============================\n"
-    printf "\t# [1] Python 2\n"
-    printf "\t# [2] Python 3\n"
-    printf "\t# [3] Python 2/3\n"
-    printf "\t==============================\n"
-    printf "\tSelect Python support option >\t"
-}
+GITHUBER_TOOL=githuber
+GITHUBER_VERSION=ver.5.2
+GITHUBER_HOME=${UTIL_ROOT}/${GITHUBER_TOOL}/${GITHUBER_VERSION}
 
-#
-# @brief  Select Python support for generation PYP
-# @param  None
-# @retval Selected option 1, 2, or 3
-#
-# @usage
-# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-#
-# select_py_support
-# local OPTION=$?
-#
-function select_py_support {
-    local OPT=0
-    list_py_support
-    read OPT
-    while [[ $OPT != '' || $OPT != *$'\n' ]]
-    do
-        case $OPT in
-            1)
-                option_picked "Option Python 2 Picked";
-                break
-                ;;
-            2)
-                option_picked "Option Python 3 Picked";
-                break
-                ;;
-            3)
-                option_picked "Option Python 2 and Python 3 Picked";
-                break
-                ;;
-            \n)
-                option_picked "Pick an option from the menu >\t";
-                read opt;
-                ;;
-            *)
-                option_picked "Pick an option from the menu >\t";
-                read opt;
-                ;;
-        esac
-    done
-    return $OPT
-}
+.    ${GITHUBER_HOME}/bin/drop_to_file.sh
 
 #
 # @brief  Deploy build script for generation pyp
@@ -116,8 +50,6 @@ function deploy_build_py {
     if [[ -n "${GITHUB_DIR}" && -n "${PRO_NAME}" ]]; then
         local BUILD_FILE TEMPLATE
         local STATUS=$NOT_SUCCESS
-        select_py_support
-        local OPTION=$?
         TEMPLATE="${GITHUBER_HOME}/conf/${DATA_REF[PYP_CREATE]}"
         BUILD_FILE="${GITHUB_DIR}/pypi_create.sh"
         MSG="Generating file [${BUILD_FILE}]"
@@ -138,57 +70,16 @@ function deploy_build_py {
             MSG="Faile generation of file [${BUILD_FILE}]"
             info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
         fi
-        case $OPTION in
-            1)
-                TEMPLATE="${GITHUBER_HOME}/conf/${DATA_REF[PYP2_BUILD]}"
-                BUILD_FILE="${GITHUB_DIR}/pypi2_build.sh"
-                MSG="Generating file [${BUILD_FILE}]"
-                info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
-                drop_to_file $TEMPLATE $BUILD_FILE
-                STATUS=$?
-                if [ $STATUS -eq $NOT_SUCCESS ]; then
-                    MSG="Faile generation of file [${BUILD_FILE}]"
-                    info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
-                fi
-                ;;
-            2)
-                TEMPLATE="${GITHUBER_HOME}/conf/${DATA_REF[PYP3_BUILD]}"
-                BUILD_FILE="${GITHUB_DIR}/pypi3_build.sh"
-                MSG="Generating file [${BUILD_FILE}]"
-                info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
-                drop_to_file $TEMPLATE $BUILD_FILE
-                STATUS=$?
-                if [ $STATUS -eq $NOT_SUCCESS ]; then
-                    MSG="Faile generation of file [${BUILD_FILE}]"
-                    info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
-                fi
-                ;;
-            3)
-                TEMPLATE="${GITHUBER_HOME}/conf/${DATA_REF[PYP2_BUILD]}"
-                BUILD_FILE="${GITHUB_DIR}/pypi2_build.sh"
-                MSG="Generating file [${BUILD_FILE}]"
-                info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
-                drop_to_file $TEMPLATE $BUILD_FILE
-                STATUS=$?
-                if [ $STATUS -eq $NOT_SUCCESS ]; then
-                    MSG="Faile generation of file [${BUILD_FILE}]"
-                    info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
-                fi
-                TEMPLATE="${GITHUBER_HOME}/conf/${DATA_REF[PYP3_BUILD]}"
-                BUILD_FILE="${GITHUB_DIR}/pypi3_build.sh"
-                MSG="Generating file [${BUILD_FILE}]"
-                info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
-                drop_to_file $TEMPLATE $BUILD_FILE
-                STATUS=$?
-                if [ $STATUS -eq $NOT_SUCCESS ]; then
-                    MSG="Faile generation of file [${BUILD_FILE}]"
-                    info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
-                fi
-                ;;
-            *)
-                option_picked "Failed to process option!";
-                ;;
-        esac
+        TEMPLATE="${GITHUBER_HOME}/conf/${DATA_REF[PYP3_BUILD]}"
+        BUILD_FILE="${GITHUB_DIR}/pypi3_build.sh"
+        MSG="Generating file [${BUILD_FILE}]"
+        info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
+        drop_to_file $TEMPLATE $BUILD_FILE
+        STATUS=$?
+        if [ $STATUS -eq $NOT_SUCCESS ]; then
+            MSG="Faile generation of file [${BUILD_FILE}]"
+            info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
+        fi
         return $STATUS
     fi
     MSG="Failed to deploy build script(s)"

@@ -1,11 +1,22 @@
 #!/bin/bash
 #
 # @brief   Project structure formater
-# @version ver.4.2
+# @version ver.5.2
 # @date    Sun 21 Nov 2021 10:27:58 AM CET
 # @company None, free software to use 2021
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
+UTIL_ROOT=/root/scripts
+UTIL_VERSION=ver.1.0
+UTIL=${UTIL_ROOT}/sh_util/${UTIL_VERSION}
+
+.    ${UTIL}/bin/devel.sh
+
+GITHUBER_TOOL=githuber
+GITHUBER_VERSION=ver.5.2
+GITHUBER_HOME=${UTIL_ROOT}/${GITHUBER_TOOL}/${GITHUBER_VERSION}
+
+.    ${GITHUBER_HOME}/bin/drop_to_file.sh
 
 #
 # @brief  Deploy guide info file for github project

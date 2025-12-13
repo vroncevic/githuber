@@ -17,7 +17,7 @@ ${H}
 "mkdir \\\$TW_DIR_NAME"
 "printf \\\"%s\n\\\" \\\"[setup] create pkg dirs \\\${TW_DIR_NAME}/\\\""
 "cd \\\$TW_DIR_NAME"
-"mkdir dist/ py2/ py3/"
+"mkdir dist/ py3/"
 "cd .."
 "tree \\\${TW_DIR_NAME}/"
 

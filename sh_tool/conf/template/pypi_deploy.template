@@ -12,11 +12,11 @@ ${H}
 "PYPI_URL=https://upload.pypi.org/legacy/"
 
 "${H} Check process"
-"twine check ./\\\${TW_DIR_NAME}/dist/*"
+"python3 twine check ./\\\${TW_DIR_NAME}/dist/*"
 
 "${H} Deploying process"
 "cd \\\$TW_DIR_NAME"
-"twine upload ./\\\${TW_DIR_NAME}/dist/* --verbose"
+"python3 twine upload ./\\\${TW_DIR_NAME}/dist/* --verbose"
 
 "${H} Success exit"
 "exit 0"
