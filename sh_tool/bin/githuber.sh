@@ -203,7 +203,7 @@ function __githuber {
                 fi
                 MSG="Set owner!"
                 info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
-                eval "chown -R ${USERID}.${GROUPID} ${PRO_DIR}/"
+                eval "chown -R ${USERID}:${GROUPID} ${PRO_DIR}/"
                 MSG="Set permission!"
                 info_debug_message "$MSG" "$FUNC" "$GITHUBER_TOOL"
                 eval "chmod -R 700 ${PRO_DIR}/"
